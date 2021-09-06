@@ -1,0 +1,132 @@
+.cart-summary {
+  padding: 30px 50px 50px;
+  border: 10px solid $orange70;
+  color: #000;
+
+  @include media-w($lg) {
+    padding: 30px 20px 50px;
+  }
+
+  &__title {
+    margin: 0 0 50px;
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+  &__label {
+    margin-bottom: 35px;
+  }
+
+  &__items {
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &--255 {
+      max-width: 255px;
+    }
+
+    &--280 {
+      max-width: 280px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__price {
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--accent {
+      font-size: 24px;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: $orange70;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__tooltip {
+    display: none;
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    &:checked + .cart-summary__choice:before {
+      background-image: url('../images/icons/check-mark.svg');
+    }
+  }
+
+  &__group {
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $grey60;
+    cursor: pointer;
+  }
+
+  &__choice {
+    display: inline-block;
+    padding-left: 60px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border: 1px solid $grey60;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+}

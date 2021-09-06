@@ -1,0 +1,276 @@
+@import "vars";
+@import "mixins";
+@import "dev";
+
+@include font-face('Poppins', 'Poppins-Light', 300);
+@include font-face('Poppins', 'Poppins-Regular', 400);
+@include font-face('FjallaOne', 'FjallaOne-Regular', 400);
+@include font-face('Poppins', 'Poppins-Medium', 500);
+@include font-face('Poppins', 'Poppins-SemiBold', 600);
+@include font-face('Poppins', 'Poppins-Bold', 700);
+@include font-face('QuattrocentoSans', 'QuattrocentoSans-Bold', 700);
+@include font-face('Roboto', 'Roboto-Black', 900);
+@include font-face('PostNoBillsJaffna', 'PostNoBillsJaffna-ExtraBold', 800);
+
+//EFFECTS
+@import "./parts/effects/effects";
+
+//INDEX
+@import "./parts/buttons/buttons";
+@import "./parts/components/countdown";
+@import "./parts/header/header";
+@import "./parts/index/slider-marketing";
+@import "./parts/index/top-slider";
+@import "./parts/index/offers";
+@import "./parts/index/bestsellers";
+@import "./parts/lists/cards-list";
+@import "./parts/cards/product-card";
+@import "./parts/index/article-left";
+@import "./parts/index/featured-products";
+@import "./parts/index/benefits";
+@import "./parts/index/article-right";
+@import "./parts/index/main-faq";
+@import "./parts/forms/subscribe-form";
+@import "./parts/forms/form";
+@import "./parts/footer/footer";
+
+//404
+@import "./parts/404/404";
+@import "./parts/breadcrumbs/breadcrumbs";
+
+//ARTICLE
+@import './parts/article/article';
+@import "./parts/cards/article-card";
+
+//CATALOGUE
+@import "./parts/components/offer-top";
+@import "./parts/components/dropdown-list";
+@import "./parts/components/filter";
+@import "./parts/catalogue/catalogue";
+@import "./parts/components/pagination";
+
+//PRODUCT-DETAILS
+@import "./parts/product-details/product-details";
+@import "./parts/product-details/related-products";
+@import "./parts/product-details/tabs";
+@import "./parts/product-details/detail-slider";
+@import "./parts/cards/review-card";
+@import "./parts/product-details/modal-product";
+@import "./parts/product-details/review-form";
+
+//BLOG
+@import "./parts/blog/blog";
+@import "./parts/cards/blog-card";
+
+//ABOUT
+@import "./parts/about/about";
+@import "./parts/about/info-block";
+@import "./parts/about/results";
+@import "./parts/about/offers-products";
+@import "./parts/about/program-card";
+
+//CONTACT
+@import "./parts/contact/contact";
+@import "./parts/contact/contact-social";
+@import "./parts/contact/contact-form";
+
+//CART
+@import "./parts/cart/cart";
+@import "./parts/cart/cart-summary";
+@import "./parts/cards/item-card";
+
+//MODAL-CART
+@import "./parts/modals/modal-cart/modal-cart";
+
+.banner {
+  height: 592px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $black-main;
+
+  &__inner {
+  padding: 82px 0 220px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 460px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 54px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: 45px;
+  }
+
+  &__btn {
+    min-width: 300px;
+  }
+}
+
+.affiliate-text {
+  color: $black-main;
+  margin-bottom: 60px;
+
+  p {
+    a {
+      text-decoration-line: underline;
+      color: $green60;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $green-primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.join-row {
+  max-width: 1530px;
+  margin: 0 auto 100px;
+  color: $black-main;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 465px;
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 390px;
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    z-index: 2;
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: auto;
+    background-color: $blue-bg;
+    max-width: 1320px;
+    width: 100%;
+    max-height: 390px;
+  }
+
+  &__title {
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+}
+
+.affiliate-results {
+  margin-bottom: 210px;
+
+  &__title {
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+
+  &__top {
+    margin-bottom: 65px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    flex: 1;
+    border: 1px solid $grey60;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+  }
+}
+
+.affiliate-card {
+  display: flex;
+  height: 100%;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 75px;
+    width: 100%;
+    background-color: $orange70;
+    padding: 0 15px;
+  }
+
+  &__num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  &__content {
+    margin: auto;
+    width: 100%;
+    padding: 22px 5px 22px 16px;
+  }
+}
+
+.affiliate-features {
+  &__title {
+    font-weight: 400;
+    margin: 0 0 80px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  &__item {
+    flex: 0 1 calc(33.333% - 66px);
+  }
+}
+
+

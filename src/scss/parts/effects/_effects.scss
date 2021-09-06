@@ -1,0 +1,45 @@
+.border-effect {
+  border-left: 6px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+
+  &:hover {
+    color: $green-primary;
+    border-color: $green-primary;
+  }
+
+  &--active {
+    color: $green-primary;
+    border-color: $green-primary;
+  }
+}
+
+.green-effect {
+  background-color: #8cc63f;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .0125em;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0 0;
+  transform: scale(1);
+  text-align: center;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  transition: color .3s,border-color .3s,background-color .3s,transform .3s;
+
+  &:focus {
+    box-shadow: 0 0 10px #363636;
+  }
+
+  &:hover {
+    color: #8cc63f;
+    border-color: #8cc63f;
+    background-color: #e8f4d9;
+  }
+
+  &:active {
+    transform: scale(1.1);
+    }
+}

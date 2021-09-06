@@ -1,0 +1,38 @@
+@mixin font-face($style-name, $file:$style-name, $weight:normal, $style:normal) {
+  $filepath: "/fonts/" + $file;
+  @font-face {
+    font-family: quote($style-name);
+    src: url($filepath + ".eot");
+    src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+    url($filepath + ".woff2") format('woff2'),
+    url($filepath + ".ttf") format('truetype'),
+    url($filepath + ".svg#" + $style-name + "") format('svg');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+//  example -> @include font-face('PFDinTextPro', 'PFDinTextPro-Bold', 700, italic);
+
+@mixin text-clamp($lines: 2, $line-height: false) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  // Fallback for non-Webkit browsers
+  // (won't show `…` at the end of the block)
+  @if $line-height {
+    max-height: $line-height * $lines * 1px;
+  }
+}
+
+@mixin media-w($w) {
+  @media only screen and (max-width: $w) {
+    @content;
+  }
+}
+
+
+

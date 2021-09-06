@@ -1,0 +1,641 @@
+.header {
+  font-size: 16px;
+  color: $black-main;
+  margin-bottom: 125px;
+  z-index: 3;
+
+  @include media-w($lg) {
+    margin-bottom: 79px;
+  }
+
+  @include media-w($md) {
+    margin-bottom: 90px;
+  }
+
+  &__box {
+    margin-right: 117px;
+
+    @include media-w($xl) {
+      margin-right: 30px;
+    }
+
+    @include media-w($lg) {
+      margin-right: 0;
+      padding: 25px 10px;
+    }
+
+  }
+
+  &__logo-img {
+    object-fit: contain;
+    max-height: 77px;
+    max-width: 77px;
+  }
+
+  &__buttons {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 10px;
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+    transition: display 0.3s, padding 0.3s, border-bottom 0.3s;
+
+    @include media-w($lg) {
+      display: flex;
+    }
+
+    &--sticky {
+      border-color: $grey70;
+      padding: 10px;
+    }
+
+  }
+
+  &__wrapper {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+  }
+
+  &__top {
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    background-color: $black-main;
+
+    @include media-w($lg) {
+      display: none;
+    }
+
+    svg {
+      max-width: 12px;
+      max-height: 12px;
+    }
+  }
+
+  &__top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-w($lg) {
+      flex-direction: column;
+      align-items: unset;
+      padding-bottom: 100px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    color: $grey60;
+  }
+
+  &__link {
+    margin-right: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &--personal {
+      display: none;
+
+      @include media-w($lg) {
+        display: block;
+        font-size: 20px;
+        font-weight: 300;
+        position: relative;
+        color: #fff;
+        margin-right: 0;
+        margin-bottom: 35px;
+        padding-top: 20px;
+        padding-bottom: 11px;
+        padding-left: 60px;
+        border-bottom: 1px solid #fff;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 18px;
+          height: 17px;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url('../images/icons/login.svg');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+
+    }
+
+    &--btn {
+      display: inline-block;
+      min-width: 140px;
+      margin-right: 0;
+      padding: 8px;
+      text-align: center;
+      color: #fff;
+      background-color: $black-main;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    &--mail {
+      font-size: 12px;
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    padding: 10px 0;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    svg {
+      transform: scale(1);
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.3);
+      }
+    }
+
+    &--mob {
+      svg {
+        max-width: 22px;
+        max-height: 22px;
+      }
+    }
+  }
+
+  &__nav {
+    position: relative;
+    padding: 6px 0;
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+    z-index: 3;
+    transition: padding 0.3s, border-bottom 0.3s;
+
+    &--sticky {
+      padding: 3px 0;
+      border-color: $grey70;
+    }
+
+    @include media-w($lg) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(#3a3f44, 0.7);
+      color: #fff;
+      height: 100vh;
+      padding: 0;
+      transform: translateX(-200%);
+      transition: transform 0.5s;
+
+      &--active {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &__nav-inner {
+    @include media-w($lg) {
+      width: 80vw;
+      height: 100vh;
+      color: black;
+      overflow: scroll;
+      background-color: #fff;
+
+      .container {
+        padding: 0;
+      }
+    }
+
+  }
+
+  &__form {
+    display: flex;
+    margin-right: 40px;
+
+    @include media-w($xl) {
+      margin-right: 15px;
+    }
+
+    @include media-w($lg) {
+      display: none;
+    }
+
+
+    &:hover {
+      .header__input {
+        display: block;
+      }
+
+      .header__svg {
+        fill: $green-primary;
+      }
+    }
+
+  }
+
+  &__input {
+    width: 305px;
+    border: none;
+    border-bottom: 1px solid $green-primary;
+    display: none;
+    transition: display 0.3s;
+
+    &:focus {
+      display: block;
+
+      & + .header__submit > .header__svg {
+        fill: $green-primary;
+      }
+    }
+
+    @include media-w($xl) {
+      width: 200px;
+    }
+  }
+
+  &__submit {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg path {
+      fill: #373737;
+    }
+
+  }
+
+  &__svg {
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+
+    @include media-w($lg) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__additional {
+    display: none;
+    color: $black-main;
+    line-height: 1.3;
+    font-size: 16px;
+
+    @include media-w($lg) {
+      display: block;
+      margin-left: 20px;
+    }
+
+  }
+
+  &__cross {
+    display: none;
+
+    @include media-w($lg) {
+      display: block;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      top: 25px;
+      right: 10%;
+      cursor: pointer;
+    }
+
+    @include media-w($xs) {
+      right: 7%;
+    }
+  }
+
+  &__cross-svg {
+    max-width: 40px;
+    max-height: 40px;
+
+    @include media-w($md) {
+      max-width: 28px;
+      max-height: 28px;
+    }
+  }
+
+  &__group {
+
+    @include media-w($lg) {
+      background-color: $black-main;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__contact {
+    padding: 25px 25px 20px 15px;
+    display: none;
+
+    @include media-w($lg) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__elem {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+
+    svg path {
+      fill: #373737;
+    }
+  }
+
+  &__form-wrapper {
+    position: absolute;
+    transform: translateY(-200%);
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, .4);
+    transition: transform 0.6s;
+
+    &--active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+
+
+  @include media-w($lg) {
+    align-items: unset;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 15px;
+  }
+
+  &__svg {
+    width: 8px;
+    height: 8px;
+    margin-left: 3px;
+
+    @include media-w($lg) {
+      display: none;
+    }
+  }
+
+  &__item {
+
+    @include media-w($lg) {
+      color: #fff;
+    }
+
+    &:not(:last-child) {
+      margin-right: 27px;
+
+      @include media-w($lg) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    transition: color 0.3s;
+
+    @include media-w($lg) {
+      font-size: 20px;
+      padding: 10px 0;
+      display: block;
+    }
+
+    svg {
+      stroke: $black-main;
+      transition: stroke 0.3s;
+
+      @include media-w($lg) {
+        margin-left: 0;
+      }
+    }
+
+    &:focus {
+      outline-color: transparent;
+      @extend %box-shadow;
+    }
+
+    &:hover {
+      color: $green-primary;
+
+      svg {
+        stroke: $green-primary;
+      }
+    }
+
+    @include media-w($lg) {
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:active {
+      color: $green70;
+    }
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @include media-w($lg) {
+    display: none;
+  }
+
+
+  &__link {
+    font-size: 16px;
+    z-index: 3;
+
+    @include media-w($lg) {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include media-w($xl) {
+        margin-right: 15px;
+      }
+    }
+
+    &--cart {
+      position: relative;
+    }
+
+  }
+
+  &__register {
+    color: $green-primary;
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    margin-right: 5px;
+    outline-color: transparent;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+
+    @include media-w($xl) {
+      margin-right: 5px;
+    }
+
+    @include media-w($lg) {
+      text-align: center;
+      color: #fff;
+      background-color: $green-primary;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      margin-right: 0;
+    }
+
+    &:focus {
+      box-shadow: 0 0 10px darken($black-main, 0.2);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $green-primary;
+    }
+  }
+
+  &__login {
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background-color: $green-primary;
+    outline-color: transparent;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+    &:focus {
+      box-shadow: 0 0 10px darken($black-main, 0.2);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $green-primary;
+      color: $green-primary;
+    }
+  }
+
+  &__num {
+    position: absolute;
+    text-align: center;
+    top: 13px;
+    left: 7px;
+    padding: 0 2px;
+    min-width: 15px;
+    height: 15px;
+    font-size: 10px;
+    background-color: $orange70;
+    border-radius: 50%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
+    @include media-w($lg) {
+      top: 26px;
+      left: 16px;
+    }
+  }
+}
+
+.top-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  background-color: #fff;
+
+  @include media-w($sm) {
+    height: 80px;
+    padding: 0 10px;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid $green-primary;
+    width: 65%;
+    margin-right: 20px;
+  }
+
+  &__search {
+    width: 27px;
+    height: 27px;
+  }
+
+  &__submit {
+    background-color: transparent;
+    border: none;
+    margin-right: 50px;
+
+    @include media-w($xs) {
+      margin-right: 30px;
+    }
+  }
+
+  &__svg {
+    width: 39px;
+    height: 39px;
+  }
+}
+

@@ -1,0 +1,283 @@
+.article {
+  position: relative;
+  padding: 320px 0 50px;
+  letter-spacing: 0.045em;
+
+  @include media-w($sm) {
+    padding: 245px 0 0;
+  }
+
+  @include media-w($xs) {
+    padding: 145px 0 0;
+  }
+
+
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 410px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @include media-w($sm) {
+      height: 310px;
+    }
+
+    @include media-w($xs) {
+      height: 200px;
+    }
+  }
+
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 65px 10px 0;
+  }
+
+  &__inner {
+    background-color: #fff;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+
+  &__title {
+    margin: 0 0 20px 0;
+    letter-spacing: 0.05em;
+    max-width: 570px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+
+    @include media-w($md) {
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 35px;
+    }
+
+    @include media-w($sm) {
+      flex-direction: column;
+    }
+
+  }
+
+  &__group {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__time {
+    display: inline-block;
+    color: $grey65;
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 18px;
+    box-shadow: 0 0;
+    letter-spacing: 0.03em;
+    transition: box-shadow 0.3s, color 0.3s;
+
+    @include media-w($md) {
+      margin-bottom: 10px;
+    }
+
+
+    @include media-w($sm) {
+      margin-right: 0;
+    }
+
+
+    &:focus {
+      box-shadow: 0 0 10px darken($black-main, 0.2);
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      box-shadow: 0 0;
+      color: $black-main;
+    }
+
+  }
+
+  &__pin {
+    display: inline-block;
+    background-color: $blue-bg;
+    min-width: 115px;
+    color: $blue60;
+    padding: 4px 10px;
+    font-size: 12px;
+    box-shadow: 0 0;
+    transform: scale(1);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+    @include media-w($md) {
+      padding: 12px 10px;
+    }
+
+
+    &:focus {
+      box-shadow: 0 0 10px darken($black-main, 0.2);
+    }
+
+    &:hover {
+      background-color: #98dce7;
+      color: #fff;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+
+
+    &:not(:last-child) {
+      margin-right: 25px;
+
+      @include media-w($sm) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 750px;
+
+    @include media-w($md) {
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 30px;
+
+      @include media-w($sm) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__underline {
+    text-decoration-line: underline;
+    color: $green60;
+
+    @include media-w($md) {
+      padding: 10px 0;
+    }
+
+  }
+
+  &__row {
+    margin-top: 70px;
+    padding: 34px 30px;
+    background-color: $blue-bg;
+    color: $black-main;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 85px;
+
+    @include media-w($sm) {
+      font-size: 18px;
+      margin: 50px 0;
+      padding: 34px 10px;
+    }
+
+    a[href] {
+      outline-color: transparent;
+      box-shadow: 0 0;
+      transition: color 0.3s, box-shadow 0.3s;
+
+      @include media-w($md) {
+        font-size: 21px;
+      }
+
+      @include media-w($sm) {
+        padding: 10px 0;
+      }
+
+
+      &:focus {
+        box-shadow: 0 0 10px darken($black-main, 0.2);
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        box-shadow: 0 0;
+        color: $grey70;
+      }
+    }
+
+    img {
+      cursor: pointer;
+    }
+
+  }
+
+  &__topics {
+    margin-top: 50px;
+  }
+
+  &__subtitle {
+    margin: 0 0 35px;
+  }
+
+  &__list {
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $green60;
+
+    @include media-w($sm) {
+      font-size: 18px;
+      margin-left: 0;
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 30px;
+    letter-spacing: 0.07em;
+
+    @include media-w($xs) {
+      padding-left: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 6px;
+      background-color: $green60;
+      border-radius: 50%;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+
+
+      @include media-w($xs) {
+        content: none;
+      }
+    }
+
+  }
+}

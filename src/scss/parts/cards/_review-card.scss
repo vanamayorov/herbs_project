@@ -1,0 +1,94 @@
+.review-card {
+  max-width: 850px;
+  padding: 16px 0 30px;
+
+  .jq-ry-container {
+    padding: 0;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  &__author {
+    font-size: 20px;
+    font-weight: 600;
+    color: #464646;
+    letter-spacing: 0.015em;
+    line-height: 1.2;
+
+    @include media-w($sm) {
+      font-size: 18px;
+    }
+
+    &--buy {
+      position: relative;
+      padding-left: 27px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 17px;
+        height: 18px;
+        background-image: url('../images/icons/author-buy.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+  }
+
+  &__group {
+    margin-right: 31px;
+    position: relative;
+    padding-right: 36px;
+
+    @include media-w($sm) {
+      margin-right: 8px;
+      padding-right: 30px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 10px;
+      width: 24px;
+      height: 1px;
+      background-color: $grey65;
+    }
+  }
+
+  date {
+    font-size: 12px;
+    color: $grey63;
+  }
+
+  &__content {
+    @include media-w($sm) {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #464646;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  &__rating {
+    z-index: 2;
+  }
+
+}

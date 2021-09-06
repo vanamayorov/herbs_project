@@ -1,0 +1,47 @@
+.contact-form {
+  &__row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      @include media-w($md) {
+        margin-bottom: 40px;
+      }
+    }
+
+    @include media-w($md) {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    flex: 1;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include media-w($md) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__box {
+    @include media-w($md) {
+      background-color: #fff;
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  &__submit {
+    max-width: 700px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,147 @@
+.top-slider {
+
+  &--marketing {
+    font-family: 'FjallaOne', sans-serif;
+    color: $black-main;
+  }
+
+
+  &__list {
+    margin-top: 0;
+  }
+
+  &__inner {
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 130px;
+    min-height: 883px;
+
+    @include media-w($md) {
+      background-position: top center;
+      background-size: cover;
+      padding-top: 45px;
+      min-height: 500px;
+    }
+
+  }
+
+  &__subtitle {
+    font-family: "FjallaOne", sans-serif;
+    font-style: normal;
+    font-size: 54px;
+    text-align: center;
+    color: $black-main;
+    max-width: 700px;
+    line-height: 1.15;
+    margin: 0 auto 18px;
+    letter-spacing: 0.05em;
+
+    @include text-clamp(4);
+
+    @include media-w($md) {
+      margin: 0 auto 5px;
+      font-size: 33px;
+      max-width: 525px
+    }
+
+    @include media-w($sm) {
+      text-align: left;
+
+      font-size: 34px;
+      max-width: 465px
+    }
+  }
+
+  &__types {
+    color: $blue60;
+    text-align: center;
+
+    @include media-w($sm) {
+      text-align: left;
+      font-size: 16px;
+    }
+  }
+
+  .slick-dots {
+    bottom: 160px;
+
+    @include media-w($sm) {
+      bottom: 0;
+    }
+
+
+    li {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-right: 38px;
+      }
+
+      button {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid $black-main;
+        font-size: initial;
+        padding: 0;
+        background-color: #fff;
+        box-shadow: 0 0;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+
+        &::before {
+          content: none;
+        }
+      }
+
+      &:focus {
+        button {
+          @extend %box-shadow;
+        }
+      }
+
+      &:hover {
+        button {
+          background-color: $grey70;
+        }
+      }
+
+      &:active {
+        button {
+          transform: scale(1.3);
+        }
+      }
+
+    }
+
+
+    .slick-active button {
+      background-color: $black-main;
+    }
+  }
+
+  &__type {
+    position: relative;
+
+    &:not(:last-child) {
+      padding-right: 60px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        right: 20px;
+        top: 1px;
+        width: 15px;
+        height: 15px;
+        background-image: url('../images/icons/type.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+
+    }
+  }
+
+  .slick-slider {
+    margin-bottom: 0;
+  }
+}

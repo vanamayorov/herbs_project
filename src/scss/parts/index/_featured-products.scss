@@ -1,0 +1,13 @@
+.featured-products {
+  padding-bottom: 140px;
+
+  &__title {
+    text-align: center;
+    margin: 0 0 50px 0;
+
+    @include media-w($md) {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+}

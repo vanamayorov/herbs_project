@@ -1,0 +1,36 @@
+.bestsellers {
+  padding-top: 15px;
+  padding-bottom: 220px;
+
+  @include media-w($lg) {
+    padding-bottom: 20px;
+  }
+
+  @include media-w($md) {
+    padding-bottom: 100px;
+  }
+
+
+  &__title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    @include media-w($md) {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
+
+  &__link {
+    color: $green-primary;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}

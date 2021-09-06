@@ -1,0 +1,33 @@
+$black-main: #373737;
+
+$green70: #608929;
+$green60: #5a8f12;
+$green50: #aed779;
+$green-primary: #8cc63f;
+
+
+$orange70: #fec343;
+
+
+$grey70: #6d6d6d;
+$grey65: #8c8c8c;
+$grey63: #bdbdbd;
+$grey60: #e0e0e0;
+$grey50: #e8f1f0;
+
+
+$white70: #e8f4d9;
+
+
+$blue60: #6fa4a9;
+$blue-bg: #f1fbfc;
+
+%box-shadow {
+  box-shadow: 0 0 10px darken($black-main, 0.2);
+}
+
+$xl: 1440px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 480px;

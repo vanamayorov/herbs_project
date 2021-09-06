@@ -1,0 +1,38 @@
+@@include('parts/head.html')
+<div class="global-wrapper">
+    @@include('parts/header.html')
+    <main class="main">
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Home</a>
+                    </li>
+
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Products</a>
+                    </li>
+
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Buy CBD & Hemp Products</a>
+                    </li>
+
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Delta 8 Hemp Asteroids</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        @@include('parts/product-details/_product-details.html')
+        @@include('parts/product-details/_related-products.html')
+        @@include('parts/product-details/_modal.html')
+        <!-- @@include('parts/product-details/_review-form.html') -->
+    </main>
+
+    @@include('parts/footer.html')
+    @@include('parts/footer-links.html')
+</div>
+</body>
+</html>

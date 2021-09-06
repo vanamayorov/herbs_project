@@ -1,0 +1,137 @@
+.transparent-btn {
+  position: relative;
+  min-width: 270px;
+  display: inline-block;
+  color: $green-primary;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid $blue-bg;
+  text-transform: uppercase;
+  outline-color: transparent;
+  transform: scale(1);
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 13px;
+    height: 58px;
+    background-color: transparent;
+    border: 1px solid;
+    border-bottom-color: $green-primary;
+    border-right-width: 0;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: "";
+    width: 13px;
+    height: 58px;
+    background-color: transparent;
+    border: 1px solid;
+    border-bottom-color: $green-primary;
+    border-left-width: 0;
+  }
+
+  &:focus {
+    @extend %box-shadow;
+  }
+
+  &:hover {
+    background-color: $green50;
+    color: #fff;
+
+    &::before,
+    &::after {
+      border-color: $green-primary;
+    }
+
+  }
+
+  &:active {
+    transform: scale(1.2);
+  }
+}
+
+.green-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  min-width: 270px;
+}
+
+.burger {
+  display: block;
+  border: none;
+  background-color: transparent;
+
+  &__svg {
+    max-width: 30px;
+    max-height: 30px;
+  }
+}
+
+.cart {
+  padding: 5px 7px;
+  position: relative;
+
+  &__svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  &__num {
+    position: absolute;
+    text-align: center;
+    top: 13px;
+    left: 7px;
+    padding: 0 2px;
+    min-width: 15px;
+    height: 15px;
+    font-size: 10px;
+    background-color: $orange70;
+    border-radius: 50%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
+    @include media-w($lg) {
+      top: 22px;
+      left: 22px;
+    }
+  }
+}
+
+.blue-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  min-width: 270px;
+  font-weight: 600;
+  letter-spacing: 0.0125em;
+  text-transform: uppercase;
+  background-color: $blue60;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s;
+
+  &:focus {
+    box-shadow: 0 0 10px $grey70;
+  }
+
+  &:hover {
+    background-color: #458288;
+  }
+
+  @include media-w($sm) {
+    padding: 11px;
+  }
+}

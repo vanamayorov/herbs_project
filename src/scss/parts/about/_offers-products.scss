@@ -1,0 +1,20 @@
+.offers-products {
+  padding-bottom: 410px;
+
+  &__title {
+    max-width: 1260px;
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 54px;
+    color: $black-main;
+    letter-spacing: 0.05em;
+    margin: 0 auto 100px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 170px;
+    }
+  }
+}

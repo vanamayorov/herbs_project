@@ -1,0 +1,32 @@
+.dropdown-list {
+  width: 270px;
+  padding: 30px 20px 25px 0;
+  background-color: $blue-bg;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  flex-direction: column;
+  z-index: 2;
+  color: $grey65;
+  display: none;
+
+  &--active {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &--half {
+      width: 50%;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    display: block;
+    padding: 5px 0 5px 18px;
+  }
+}

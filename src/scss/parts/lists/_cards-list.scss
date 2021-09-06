@@ -1,0 +1,44 @@
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  //align-items: center;
+  justify-content: center;
+
+  &__item {
+    max-width: 352px;
+    margin: 15px;
+
+    @include media-w($sm) {
+      max-width: calc(50% - 30px);
+      margin: 10px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    height: 100%;
+
+    &:focus {
+      .product-card {
+        @extend %box-shadow;
+      }
+    }
+
+    &:hover {
+      .product-card {
+        border-color: $green-primary;
+
+        &__content {
+          background-color: $green-primary;
+        }
+      }
+    }
+
+    &:active {
+      .product-card {
+        transform: scale(1.05);
+      }
+    }
+
+  }
+}

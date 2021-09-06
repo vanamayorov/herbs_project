@@ -1,0 +1,147 @@
+.main-faq {
+
+  &__svg {
+    max-width: 14px;
+    max-height: 14px;
+    vertical-align: middle;
+    display: none;
+    transition: transform 1s;
+
+    @include media-w($lg) {
+      display: inline-block;
+    }
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+
+  }
+
+
+  &__title {
+    text-align: center;
+    margin: 0 0 70px 0;
+
+    @include media-w($md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include media-w($lg) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 540px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    @include media-w($xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subtitle {
+    pointer-events: none;
+    position: relative;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    padding-left: 50px;
+
+    @include media-w($lg) {
+      pointer-events: auto;
+    }
+
+    @include media-w($xs) {
+      margin-bottom: 10px;
+      padding-left: 0;
+      font-size: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 32px;
+      height: 32px;
+      background-image: url('../images/icons/list-before.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      left: 0;
+      top: 0;
+
+      @include media-w($xs) {
+        content: none;
+      }
+    }
+
+  }
+
+  &__text {
+    font-weight: 300;
+
+    @include media-w($lg) {
+      display: none;
+    }
+  }
+
+}
+
+.row {
+  padding: 60px 0;
+  background-color: $blue-bg;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    @include media-w($lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    margin: 0 70px 0 0;
+
+    @include media-w($lg) {
+      margin-right: 0;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-w($sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__word {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin: 0 16px;
+
+    @include media-w($sm) {
+      margin: 10px 0;
+    }
+  }
+
+
+}

@@ -1,0 +1,149 @@
+<section class="cart">
+    <div class="cart__top">
+        <a class="cart__back" href="#">
+            <svg>
+                <use xlink:href="images/sprite.svg#arrow-down"></use>
+            </svg>
+        </a>
+        <span class="cart__text">Your cart</span>
+    </div>
+    <div class="container container--big">
+        <div class="cart__inner">
+
+            <div class="cart__left">
+                <div class="cart__top-row">
+                    Complete your order and earn <b>10,000</b> Points for a discount on a future purchase
+                </div>
+                <div class="cart__content">
+                    <div class="cart__group">
+                        <div class="cart__img-wrapper">
+                            <img class="cart__img" src="images/icons/empty-cart.svg" alt="Empty bag">
+                        </div>
+                        <span class="cart__sentence">Your bag is currently empty.</span>
+                        <a class="cart__btn green-btn green-effect" href="#">Return to shop</a>
+                    </div>
+
+                    <form class="cart__form">
+                        <label class="form__label cart__label">
+                            <input class="form__input" type="text" placeholder="000000">
+                            <span class="form__box">Promo code or Coupon</span>
+                        </label>
+                        <ul class="cart__products">
+                            <li class="cart__product">
+                                @@include('../cards/_item-card.html', {
+                                "img": "images/icons/product-sm.jpg",
+                                "title": "Delta 8 Hemp Asteroids",
+                                "size": "1",
+                                "price-one": "20",
+                                "price-accent": "20"
+                                })
+                            </li>
+
+                            <li class="cart__product">
+                                @@include('../cards/_item-card.html', {
+                                "img": "images/icons/product-sm.jpg",
+                                "title": "Delta 8 Hemp Asteroids",
+                                "size": "1",
+                                "price-one": "20",
+                                "price-accent": "20"
+                                })
+                            </li>
+
+
+                            <li class="cart__product">
+                                @@include('../cards/_item-card.html', {
+                                "img": "images/icons/product-sm.jpg",
+                                "title": "Delta 8 Hemp Asteroids",
+                                "size": "1",
+                                "price-one": "20",
+                                "price-accent": "20"
+                                })
+                            </li>
+
+                        </ul>
+
+                        <ul class="cart__list">
+                            <li class="cart__item">
+                                <span class="cart__name">Discount</span>
+                                <span class="cart__price">- $4.00</span>
+                            </li>
+
+                            <li class="cart__item">
+                                <span class="cart__name">Subtotal</span>
+                                <span class="cart__price">$40.00</span>
+                            </li>
+                        </ul>
+
+                        <div class="cart__wrapper-btn">
+                            <button class="cart__btn-mob green-btn green-effect" type="submit">Check out</button>
+                        </div>
+                    </form>
+
+                    <a class="cart__link" href="#">Continue shopping</a>
+                </div>
+            </div>
+            <div class="cart__right">
+                <div class="cart-summary">
+                    <h3 class="cart-summary__title">Summary</h3>
+
+                    <form class="cart-summary__form form">
+                        <label class="form__label cart-summary__label">
+                            <input class="form__input form__input--grey" type="text" placeholder="000000">
+                            <span class="form__box form__box--grey">Promo code or Coupon</span>
+                        </label>
+
+                        <ul class="cart-summary__items">
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name cart-summary__name--bold">Subtotal</span>
+
+                                <span class="cart-summary__price cart-summary__price--bold">$0.00</span>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Shipping</span>
+
+                                <div class="cart-summary__tooltip-group">
+                                    <div class="cart-summary__icon">?</div>
+                                    <div class="cart-summary__tooltip">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, nemo!
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Tax</span>
+
+                                <span class="cart-summary__price">$0.00</span>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Discount</span>
+                            </li>
+
+                            <li class="cart-summary__item">
+                                <label class="cart-summary__group">
+                                    <input class="cart-summary__checkbox" type="checkbox">
+                                    <span class="cart-summary__choice">Lost, damaged or stolen package insurance <b>($2.50)</b></span>
+                                </label>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--280">
+                                <span class="cart-summary__name">Total</span>
+
+                                <span class="cart-summary__price cart-summary__price--accent">$0.00</span>
+                            </li>
+                        </ul>
+
+
+                        <button class="cart-summary__submit green-effect green-btn" type="submit">Check Out</button>
+                        <span class="cart-summary__text">
+                            Only $50.00 per month with
+                            <img src="images/icons/product-pin.png" alt="Viable company icon">
+                        </span>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

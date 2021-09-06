@@ -1,0 +1,22 @@
+.program-card {
+  &__img-wrapper {
+    margin: 0 auto 60px;
+    max-width: 1140px;
+    max-height: 420px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+}

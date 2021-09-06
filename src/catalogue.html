@@ -1,0 +1,27 @@
+@@include('parts/head.html')
+<div class="global-wrapper">
+    @@include('parts/header.html')
+    <main class="main">
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Home</a>
+                    </li>
+
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Products</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        @@include('parts/components/_offer-top.html')
+        @@include('parts/catalogue/_catalogue.html')
+    </main>
+
+    @@include('parts/footer.html')
+    @@include('parts/footer-links.html')
+</div>
+</body>
+</html>

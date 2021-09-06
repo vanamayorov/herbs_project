@@ -1,0 +1,34 @@
+@@include('parts/head.html')
+<div class="global-wrapper">
+    @@include('parts/header.html')
+    <nav class="breadcrumbs">
+       <div class="container">
+           <ul class="breadcrumbs__list">
+               <li class="breadcrumbs__item">
+                   <a class="breadcrumbs__link" href="#">Home</a>
+               </li>
+
+               <li class="breadcrumbs__item">
+                   <a class="breadcrumbs__link" href="#">Blog</a>
+               </li>
+
+               <li class="breadcrumbs__item">
+                   <a class="breadcrumbs__link" href="#">Hemp Cannabinoids</a>
+               </li>
+
+               <li class="breadcrumbs__item">
+                   <a class="breadcrumbs__link" href="#">A List of Cannabinoids: Effects, Role, and Legality</a>
+               </li>
+           </ul>
+       </div>
+    </nav>
+    <main class="main">
+        @@include('parts/article/_article.html')
+        @@include('parts/components/_subscribe-form--blue.html')
+    </main>
+
+    @@include('parts/footer.html')
+    @@include('parts/footer-links.html')
+</div>
+</body>
+</html>

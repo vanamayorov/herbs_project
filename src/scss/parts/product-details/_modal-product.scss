@@ -1,0 +1,106 @@
+.modal-product {
+  position: absolute;
+  padding: 30px 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 940px;
+  width: 100%;
+  min-height: 670px;
+  background-color: #fff;
+  border: 10px solid $blue-bg;
+
+  &--show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__inner {
+    max-width: 810px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__img {
+    max-width: 80px;
+    max-height: 90px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      background-image: url('../images/icons/cross-dark.svg');
+    }
+  }
+
+  &__title {
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 44px;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    color: $black-main;
+    text-align: center;
+    margin: 0 0 25px 0;
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    color: #373737;
+    max-width: 180px;
+  }
+
+  &__before {
+    padding-top: 10px;
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__submit {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+  }
+}

@@ -1,0 +1,41 @@
+.pagination {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 22px;
+  color: $black-main;
+  border-bottom: 1px solid $green-primary;
+
+  @include media-w($xs) {
+    border-bottom: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 22px 13px 15px;
+    box-shadow: 0 0;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+    &:focus {
+      box-shadow: 0 0 10px darken($black-main, 0.2);
+    }
+
+    &:hover {
+      background-color: $green-primary;
+      color: #fff;
+    }
+
+    &:active {
+      box-shadow: 0 0;
+      background-color: $green70;
+    }
+
+    &--active {
+      background-color: $green-primary;
+      color: #fff;
+    }
+  }
+}

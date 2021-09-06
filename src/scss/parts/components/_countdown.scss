@@ -1,0 +1,193 @@
+.countdown {
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    position: relative;
+
+    &:first-child {
+      margin-right: 15px;
+    }
+
+    &:last-child {
+      margin-left: 22px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: -1;
+      border: 1px solid #FEC343;
+    }
+
+    &--sm {
+      &:first-child {
+        @include media-w($xs) {
+          margin-right: 5px;
+        }
+      }
+
+      &:last-child {
+        @include media-w($xs) {
+          margin-left: 5px;
+        }
+      }
+
+      &::before {
+        top: 5px;
+        left: -5px;
+      }
+    }
+  }
+
+  &__divider {
+    width: 14px;
+    height: 28px;
+    background-image: url('../images/top-slider/divider.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  &__text {
+    display: block;
+    height: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    bottom: 6px;
+    font-size: 18px;
+    background-color: #f2f8f1;
+    color: $blue60;
+  }
+}
+
+.time-elem {
+  position: relative;
+  color: #000;
+  height: 145px;
+  width: 145px;
+  background-color: #f2f8f1;
+  text-align: center;
+  font-size: 54px;
+  z-index: 2;
+  overflow: hidden;
+
+  @include media-w($sm) {
+    width: 85px;
+    height: 100px;
+    font-size: 30px;
+  }
+
+  &--sm {
+    height: 68px;
+    width: 55px;
+    font-size: 25px;
+  }
+
+}
+
+.time-elem > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.top {
+  z-index: 3;
+  top: 30px;
+  transform-origin: 50% 100%;
+  transform: perspective(200px);
+
+  &--sm {
+    top: 20px;
+  }
+}
+
+.bottom {
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f8f1;
+  }
+
+}
+
+.bottom-back {
+  z-index: 2;
+  top: 0;
+  height: 50%;
+  background-color: rgba(129, 175, 179, 0.2);
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &--sm {
+    span {
+      top: 20px;
+    }
+  }
+}
+
+.top, .top-back {
+  height: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.top-back {
+  z-index: 4;
+  bottom: 0;
+  transform-origin: 50% 0;
+  background-color: rgba(129, 175, 179, 0.2);
+  transform: perspective(200px) rotateX(180deg);
+
+  span {
+    position: absolute;
+    top: -42px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @include media-w($sm) {
+      top: -20px;
+    }
+  }
+
+  &--sm {
+    span {
+      top: -14px;
+    }
+  }
+}
+
+
+.time-elem .top::after, .time-elem .bottom-back::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid transparent;
+}

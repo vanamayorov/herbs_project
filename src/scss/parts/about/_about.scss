@@ -1,0 +1,64 @@
+.about {
+  position: relative;
+  padding: 200px 0 340px;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    height: 345px;
+
+    @include media-w($md) {
+      height: 200px;
+    }
+  }
+
+  &__wrapper {
+    max-width: 1340px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 60px 10px 0;
+
+    @include media-w($md) {
+      padding-top: 40px;
+    }
+  }
+
+  &__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0 0 60px;
+    letter-spacing: 0.05em;
+    font-family: 'FjallaOne',sans-serif;
+    font-size: 54px;
+    color: $black-main;
+
+    @include media-w($md) {
+      font-size: 45px;
+    }
+  }
+
+  &__row {
+    margin-bottom: 90px;
+
+    &--300 {
+      margin-bottom: 340px;
+    }
+  }
+
+  &__results {
+    margin-bottom: 140px;
+
+    @include media-w($md) {
+      margin-bottom: 90px;
+    }
+  }
+}

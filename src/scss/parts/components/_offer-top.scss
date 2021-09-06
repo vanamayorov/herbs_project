@@ -1,0 +1,99 @@
+.offer-top {
+  padding: 65px 0 0;
+
+  @include media-w($sm) {
+    padding: 35px 0 0;
+  }
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 615px;
+    width: 100%;
+    margin-left: auto;
+    border: 8px solid $orange70;
+    color: $blue60;
+    padding: 10px 35px 10px 90px;
+    line-height: 1.2;
+
+    @include media-w($sm) {
+      max-width: 450px;
+      margin: 0 auto;
+      padding-left: 50px;
+      justify-content: center;
+    }
+
+    @include media-w($xs) {
+      padding: 20px 10px;
+    }
+
+  }
+
+  &__badge {
+    position: absolute;
+    left: 10px;
+    top: -20px;
+
+    @include media-w($xs) {
+      left: 5px;
+      top: -30px;
+    }
+  }
+
+  &__svg {
+    max-width: 45px;
+    max-height: 87px;
+
+    @include media-w($sm) {
+      max-width: 30px;
+      max-height: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @include media-w($sm) {
+      flex-direction: column;
+      margin-right: 10px;
+    }
+
+  }
+
+  &__text {
+    max-width: 160px;
+    margin-right: 15px;
+
+    @include media-w($sm) {
+      margin-right: 0;
+    }
+
+    @include media-w($xs) {
+      font-size: 16px;
+    }
+  }
+
+  &__text-bold {
+    font-weight: bold;
+    color: $black-main;
+    font-size: 30px;
+    margin-right: 25px;
+
+    @include media-w($sm) {
+      margin-right: 0;
+    }
+
+    @include media-w($xs) {
+      font-size: 25px;
+    }
+  }
+
+  &__countdown {
+    text-align: center;
+  }
+}
