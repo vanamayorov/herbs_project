@@ -1,4 +1,35 @@
 $(document).ready(function () {
+    var consultingForms = $('.consulting-form__form');
+    consultingForms.each( function () {
+        $(this).validate({
+            rules: {
+                firstName: {
+                    required: true
+                },secondName: {
+                    required: true
+                },tel: {
+                    required: true
+                },mail: {
+                    required: true
+                },company: {
+                    required: true
+                },website: {
+                    required: true
+                },
+            },
+            messages: {
+                firstName: "Please specify your first name",
+                secondName: "Please specify your second name",
+                tel: "Please specify your phone number",
+                mail: "We need your email address to contact you",
+                company: "Please specify your company",
+                website: "Please specify your website",
+            },
+            submitHandler: function() {
+                $('.success-modal').addClass('success-modal--active');
+            }
+        });
+    });
 
     $(".top-slider__list").slick({
         dots: true,
@@ -111,7 +142,7 @@ $(document).ready(function () {
         }
 
         var container = $('.catalogue__dropdown');
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if ($('.sort-group__btn').is(e.target)) {
             container.removeClass('dropdown-list--active');
         }
 
@@ -361,6 +392,23 @@ $(document).ready(function () {
             }
         ]
     });
+
+    $('body').on('click', '.consulting-form__choose', function(){
+        $(this).toggleClass('consulting-form__choose--active');
+      $(this).parents('.consulting-form__dropdown').find('.dropdown-list').toggleClass('dropdown-list--active');
+    });
+
+    $('body').on('click', '.wholesale__consulting-btn', function () {
+        $('.wholesale__modal-wrapper').addClass('wholesale__modal-wrapper--active');
+        $('body').addClass('lock');
+    });
+
+    $('body').on('click', '.modal-wholesale__btn', function() {
+        $('.wholesale__modal-wrapper').removeClass('wholesale__modal-wrapper--active');
+    });
+
+    $('input[type="tel"]').mask('+1(999) 999-99-99');
+
 
     var minutes = $(".minutes");
     var seconds = $(".seconds");
