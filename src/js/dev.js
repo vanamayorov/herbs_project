@@ -1,4 +1,35 @@
 $(document).ready(function () {
+    var consultingForms = $('.consulting-form__form');
+    consultingForms.each( function () {
+        $(this).validate({
+            rules: {
+                firstName: {
+                    required: true
+                },secondName: {
+                    required: true
+                },tel: {
+                    required: true
+                },mail: {
+                    required: true
+                },company: {
+                    required: true
+                },website: {
+                    required: true
+                },
+            },
+            messages: {
+                firstName: "Please specify your first name",
+                secondName: "Please specify your second name",
+                tel: "Please specify your phone number",
+                mail: "We need your email address to contact you",
+                company: "Please specify your company",
+                website: "Please specify your website",
+            },
+            submitHandler: function() {
+                $('.success-modal').addClass('success-modal--active');
+            }
+        });
+    });
 
     $(".top-slider__list").slick({
         dots: true,
@@ -111,7 +142,7 @@ $(document).ready(function () {
         }
 
         var container = $('.catalogue__dropdown');
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if ($('.sort-group__btn').is(e.target)) {
             container.removeClass('dropdown-list--active');
         }
 
@@ -446,4 +477,116 @@ $(document).ready(function () {
             }
         ]
     });
+<<<<<<< HEAD
+=======
+
+    $('body').on('click', '.consulting-form__choose', function(){
+        $(this).toggleClass('consulting-form__choose--active');
+      $(this).parents('.consulting-form__dropdown').find('.dropdown-list').toggleClass('dropdown-list--active');
+    });
+
+    $('body').on('click', '.wholesale__consulting-btn', function () {
+        $('.wholesale__modal-wrapper').addClass('wholesale__modal-wrapper--active');
+        $('body').addClass('lock');
+    });
+
+    $('body').on('click', '.modal-wholesale__btn', function() {
+        $('.wholesale__modal-wrapper').removeClass('wholesale__modal-wrapper--active');
+    });
+
+    $('input[type="tel"]').mask('+1(999) 999-99-99');
+
+
+    var minutes = $(".minutes");
+    var seconds = $(".seconds");
+
+    var timeLeft = {
+        d: 0,
+        h: 0,
+        m: 0,
+        s: 0,
+    }
+
+    var totalSeconds;
+
+    function init() {
+        totalSeconds = Math.floor((new Date('18.07.2021') - new Date()) / 1000);
+        totalSeconds = Math.floor((new Date(Date.parse(new Date()) + 1 / 48 * 24 * 60 * 60 * 1000) - new Date()) / 1000);
+        setTimeLeft();
+
+        var interval = setInterval(() => {
+            if (totalSeconds < 0) {
+                clearInterval(interval);
+            }
+
+            countTime();
+        }, 1000);
+
+    }
+
+    function countTime() {
+        if (totalSeconds > 0) {
+            --timeLeft.s;
+            if (timeLeft.m >= 0 && timeLeft.s < 0) {
+                timeLeft.s = 59;
+                --timeLeft.m;
+                if (timeLeft.h >= 0 && timeLeft.m < 0) {
+                    timeLeft.m = 59;
+                    --timeLeft.h;
+                    if (timeLeft.d >= 0 && timeLeft.h < 0) {
+                        timeLeft.h = 23;
+                        --timeLeft.d;
+                    }
+                }
+            }
+        }
+        --totalSeconds;
+        printTime();
+    }
+
+    function printTime() {
+
+        animateFlip(minutes, timeLeft.m);
+        animateFlip(seconds, timeLeft.s);
+    }
+
+    function animateFlip(element, value) {
+        const valueInDom = parseInt(element.find('.bottom-back').text());
+        const currentValue = value < 10 ? '0' + value : '' + value;
+
+        if (valueInDom === parseInt(currentValue)) {
+            return;
+        }
+
+        element.find('.top-back span').text(currentValue);
+        element.find('.bottom-back span').text(currentValue);
+
+        gsap.to(element.find('.top'), 0.7, {
+            rotationX: '-180deg',
+            transformPerspective: 300,
+            ease: Quart.easeOut,
+            onComplete: () => {
+                element.find('.top').text(currentValue);
+                element.find('.bottom').text(currentValue);
+                gsap.set(element.find('.top'), {rotationX: 0});
+            }
+        });
+
+        gsap.to(element.find('.top-back'), 0.7, {
+            rotationX: '0',
+            transformPerspective: 300,
+            ease: Quart.easeOut,
+            clearProps: 'all'
+        });
+    }
+
+    function setTimeLeft() {
+        timeLeft.d = Math.floor(totalSeconds / (60 * 60 * 24));
+        timeLeft.h = Math.floor(totalSeconds / (60 * 60) % 24);
+        timeLeft.m = Math.floor(totalSeconds / (60) % 60);
+        timeLeft.s = Math.floor(totalSeconds % 60);
+    }
+
+    // init();
+>>>>>>> 01f217393dcb078f8d2cd12b4ad2c85759c9b0a9
 });

@@ -1,0 +1,29 @@
+@@include('parts/head.html')
+<div class="global-wrapper">
+    @@include('parts/header.html')
+    <main class="main">
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Home</a>
+                    </li>
+
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="#">Work with us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        @@include('parts/wholesale/_wholesale.html')
+        @@include('parts/wholesale/_modal-wholesale.html')
+
+        @@include('parts/wholesale/_success-modal.html')
+    </main>
+
+    @@include('parts/footer.html')
+    @@include('parts/footer-links.html')
+</div>
+</body>
+</html>
