@@ -3,6 +3,10 @@
     margin: 0 auto 60px;
     max-width: 1140px;
     max-height: 420px;
+
+    @include media-w($md) {
+      margin-bottom: 20px;
+    }
   }
 
   &__img {
@@ -18,5 +22,17 @@
 
   &__text {
     margin-bottom: 40px;
+  }
+
+  &__title {
+    @include media-w($md) {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__btn {
+    @include media-w($sm) {
+      display: block;
+    }
   }
 }

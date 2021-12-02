@@ -1,0 +1,566 @@
+<section class="checkout">
+    @@include('../components/_return-back-mob.html', {
+    "addClass": "return-back-mob--768",
+    "text": "Your cart"
+    })
+    <div class="container container--big">
+        <div class="checkout__inner">
+            <div class="checkout__left">
+                <div class="checkout__products-overview products-overview">
+                    <div class="products-overview__top">
+                        <span class="products-overview__title">In Your bag</span>
+                        <a class="edit-link" href="#">Edit</a>
+                        <p class="products-overview__text">
+                            Complete your order and earn 10,000 Points for a discount on a future purchase
+                        </p>
+                    </div>
+                    <ul class="products-overview__list">
+                        <li class="products-overview__item">
+                            <article class="checkout-card">
+                                <div class="checkout-card__content">
+                                    <div class="checkout-card__name">Delta 8 Hemp Asteroids <b>× 10</b></div>
+                                    <div class="checkout-card__size">Size: <b>1 gram</b></div>
+                                </div>
+                                <div class="checkout-card__price">
+                                    $200
+                                </div>
+                            </article>
+                            @@include('../cards/_item-card.html', {
+                            "img": "images/icons/product-sm.jpg",
+                            "title": "Delta 8 Hemp Asteroids",
+                            "size": "1",
+                            "price-one": "20",
+                            "price-accent": "20"
+                            })
+                        </li>
+                        <li class="products-overview__item">
+                            <article class="checkout-card">
+                                <div class="checkout-card__content">
+                                    <div class="checkout-card__name">Delta 8 Hemp Asteroids <b>× 10</b></div>
+                                    <div class="checkout-card__size">Size: <b>1 gram</b></div>
+                                </div>
+                                <div class="checkout-card__price">
+                                    $200
+                                </div>
+                            </article>
+                            @@include('../cards/_item-card.html', {
+                            "img": "images/icons/product-sm.jpg",
+                            "title": "Delta 8 Hemp Asteroids",
+                            "size": "1",
+                            "price-one": "20",
+                            "price-accent": "20"
+                            })
+                        </li>
+                        <li class="products-overview__item">
+                            <article class="checkout-card">
+                                <div class="checkout-card__content">
+                                    <div class="checkout-card__name">Delta 8 Hemp Asteroids <b>× 10</b></div>
+                                    <div class="checkout-card__size">Size: <b>1 gram</b></div>
+                                </div>
+                                <div class="checkout-card__price">
+                                    $200
+                                </div>
+                            </article>
+                            @@include('../cards/_item-card.html', {
+                            "img": "images/icons/product-sm.jpg",
+                            "title": "Delta 8 Hemp Asteroids",
+                            "size": "1",
+                            "price-one": "20",
+                            "price-accent": "20"
+                            })
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="checkout__forms-list">
+                    <li class="checkout__forms-item form-block">
+                        <span class="form-block__title">1. Billing details</span>
+
+                        <div class="validated-block">
+                            <div class="validated-block__left">
+                                <div class="validated-block__row">
+                                    <span>Name Second Name</span>
+                                </div>
+                                <div class="validated-block__row">
+                                    <span>Unite state , Colorado, 00 Street address, apartment  </span>
+                                </div>
+                                <div class="validated-block__row">
+                                    <span>Mail@mail.com</span>
+                                    <span>(000) 000-0000</span>
+                                </div>
+                            </div>
+                            <div class="validated-block__right">
+                                <button class="edit-btn edit-link" type="button">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="form-block__wrapper form-block__wrapper--show">
+                            <div class="form-block__content">
+                                <form class="form-block__form" id="billing-details">
+                                    <div class="form-block__row">
+                                        <label class="form-block__label">
+                                            <input class="form-block__checkbox" type="checkbox" name="agree18" required>
+                                            <span class="form-block__choice"> I am 21 years of age or older and agree to the terms and conditions. *</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row">
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="firstName" required>
+                                            <span class="form__box">Your Name *</span>
+                                        </label>
+
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="secondName" required>
+                                            <span class="form__box">your second name *</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row">
+                                        <button class="form-block__add-company" type="button">
+                                            Company name
+                                        </button>
+                                        <div class="form-block__additional form-block__additional--hide">
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="companyName" required>
+                                                <span class="form__box">your Company name</span>
+                                            </label>
+
+                                            <button class="form-block__close-company" type="button">Close</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-block__row form-block__row--location">
+                                        <div class="form-block__country">
+                                            <span class="form-block__name">Country / Region *</span>
+                                            <select class="form-block__select" name="country" required>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                                <option value="US">United States (US)</option>
+                                                <option value="UA">Ukraine (UA)</option>
+                                            </select>
+                                        </div>
+                                        <label class="form__label form-block__label form-block__label--state">
+                                            <div class="form-block__inner">
+                                                <select class="form-block__state-select" name="state" required>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                </select>
+                                            </div>
+
+                                            <span class="form__box form__box--grey">State *</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row form-block__row--three">
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="zip" placeholder="0000" required>
+                                            <span class="form__box">Zip code *</span>
+                                        </label>
+
+                                        <label class="form__label form-block__label form-block__label--city form-block__label--md">
+                                            <div class="form-block__inner">
+                                                <select class="form-block__city-select" name="city" required>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                    <option value="california">California</option>
+                                                    <option value="colorado">Colorado</option>
+                                                </select>
+                                            </div>
+                                            <span class="form__box form__box--grey">Town/city *</span>
+                                        </label>
+
+                                        <label class="form__label form-block__label form-block__label--md">
+                                            <input class="form__input" type="text" name="address"
+                                                   placeholder="Hello@mail.com" required>
+                                            <span class="form__box">Street address *</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row">
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="email"
+                                                   placeholder="Hello@mail.com">
+                                            <span class="form__box">Enter your Email</span>
+                                        </label>
+
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="phone"
+                                                   placeholder="(000) 000-0000">
+                                            <span class="form__box">Enter your Phone</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row">
+                                        <label class="form-block__label">
+                                            <input class="form-block__checkbox" type="checkbox" name="shipAgree">
+                                            <span class="form-block__choice"><b>Ship to a different address?</b></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-block__row">
+                                        <button class="form-block__save-btn green-btn green-effect" type="submit">
+                                            Save & Continue
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="checkout__forms-item form-block">
+                        <span class="form-block__title">2. Payment</span>
+
+                        <div class="validated-block">
+                            <div class="validated-block__left validated-block__left--green">
+                                <span class="validated-block__title">Credit/Debit Card</span>
+                            </div>
+                            <div class="validated-block__right">
+                                <button class="edit-btn edit-link" type="button">Edit</button>
+                            </div>
+                        </div>
+                        <div class="form-block__wrapper form-block__wrapper--show">
+                            <form class="form-block__form" id="payment-details">
+                                <div class="form-block__payment-list">
+                                    <label class="form-block__payment-item" data-tab="1">
+                                        <input class="form-block__checkbox" type="radio" name="paymentType" checked>
+                                        <div class="form-block__payment-style">
+                                            <span class="form-block__choice form-block__choice--sm">Credit/Debit Card</span>
+                                        </div>
+                                    </label>
+                                    <label class="form-block__payment-item" data-tab="2">
+                                        <input class="form-block__checkbox" type="radio" name="paymentType">
+                                        <div class="form-block__payment-style">
+                                            <span class="form-block__choice form-block__choice--sm">ViaBill</span>
+                                        </div>
+                                    </label>
+                                    <label class="form-block__payment-item" data-tab="3">
+                                        <input class="form-block__checkbox" type="radio" name="paymentType">
+                                        <div class="form-block__payment-style">
+                                            <span class="form-block__choice form-block__choice--sm"> Wire Transfer <b>(15% off)</b></span>
+                                        </div>
+                                    </label>
+                                    <label class="form-block__payment-item" data-tab="4">
+                                        <input class="form-block__checkbox" type="radio" name="paymentType">
+                                        <div class="form-block__payment-style">
+                                            <span class="form-block__choice form-block__choice--sm">Bitcoin <b>(15% off)</b></span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-block__content">
+                                    <div class="form-block__tab-content form-block__tab-content--active" data-content="1">
+                                        <div class="form-block__row">
+                                            <ul class="form-block__icons">
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/1.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/2.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/3.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/4.png"
+                                                         alt="icon">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-block__row form-block__row--three">
+                                            <label class="form__label form-block__label form-block__label--big">
+                                                <input class="form__input" type="text" name="cardNum"
+                                                       placeholder="0000 0000 0000 0000">
+                                                <span class="form__box">Card Number *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="expirationDate"
+                                                       placeholder="0000" required>
+                                                <span class="form__box">Expiration Date *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="securityCode"
+                                                       placeholder="000"
+                                                       required>
+                                                <span class="form__box">Security Code *</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-block__row">
+                                            <button class="form-block__save-btn green-btn green-effect" type="submit">
+                                                Save & Continue
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-block__tab-content" data-content="2">
+                                        <div class="form-block__row">
+                                            <ul class="form-block__icons">
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/1.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/2.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/3.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/4.png"
+                                                         alt="icon">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-block__row form-block__row--three">
+                                            <label class="form__label form-block__label form-block__label--big">
+                                                <input class="form__input" type="text" name="cardNum"
+                                                       placeholder="0000 0000 0000 0000" required>
+                                                <span class="form__box">Card Number *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="expirationDate"
+                                                       placeholder="0000" required>
+                                                <span class="form__box">Expiration Date *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="securityCode"
+                                                       placeholder="000"
+                                                       required>
+                                                <span class="form__box">Security Code *</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-block__row">
+                                            <button class="form-block__save-btn green-btn green-effect" type="submit">
+                                                Save & Continue
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-block__tab-content" data-content="3">
+                                        <div class="form-block__row">
+                                            <ul class="form-block__icons">
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/1.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/2.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/3.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/4.png"
+                                                         alt="icon">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-block__row form-block__row--three">
+                                            <label class="form__label form-block__label form-block__label--big">
+                                                <input class="form__input" type="text" name="cardNum"
+                                                       placeholder="0000 0000 0000 0000" required>
+                                                <span class="form__box">Card Number *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="expirationDate"
+                                                       placeholder="0000" required>
+                                                <span class="form__box">Expiration Date *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="securityCode"
+                                                       placeholder="000"
+                                                       required>
+                                                <span class="form__box">Security Code *</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-block__row">
+                                            <button class="form-block__save-btn green-btn green-effect" type="submit">
+                                                Save & Continue
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-block__tab-content" data-content="4">
+                                        <div class="form-block__row">
+                                            <ul class="form-block__icons">
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/1.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/2.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/3.png"
+                                                         alt="icon">
+                                                </li>
+                                                <li class="form-block__icon">
+                                                    <img class="form-block__payment-img" src="images/payment/4.png"
+                                                         alt="icon">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-block__row form-block__row--three">
+                                            <label class="form__label form-block__label form-block__label--big">
+                                                <input class="form__input" type="text" name="cardNum"
+                                                       placeholder="0000 0000 0000 0000" required>
+                                                <span class="form__box">Card Number *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="expirationDate"
+                                                       placeholder="0000" required>
+                                                <span class="form__box">Expiration Date *</span>
+                                            </label>
+                                            <label class="form__label form-block__label">
+                                                <input class="form__input" type="text" name="securityCode"
+                                                       placeholder="000"
+                                                       required>
+                                                <span class="form__box">Security Code *</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-block__row">
+                                            <button class="form-block__save-btn green-btn green-effect" type="submit">
+                                                Save & Continue
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="checkout__forms-item form-block">
+                        <span class="form-block__title">3. Order review</span>
+
+                        <div class="form-block__wrapper form-block__wrapper--show">
+                            <div class="form-block__content">
+                                <form class="form-block__form">
+                                    <div class="form-block__row">
+                                        <label class="form__label form-block__label">
+                                            <input class="form__input" type="text" name="promo" placeholder="0000">
+                                            <span class="form__box">Promo code or Coupon</span>
+                                        </label>
+                                    </div>
+                                    <ul class="form-block__checkbox-list">
+                                        <li class="form-block__checkbox-item">
+                                            <label class="form-block__label">
+                                                <input class="form-block__checkbox" type="checkbox"
+                                                       name="subscribeCoupons">
+                                                <span class="form-block__choice">Subscribe for discounts & coupons</span>
+                                            </label>
+                                        </li>
+
+                                        <li class="form-block__checkbox-item">
+                                            <label class="form-block__label">
+                                                <input class="form-block__checkbox" type="checkbox" name="smsUpdate">
+                                                <span class="form-block__choice">SMS order updates </span>
+                                            </label>
+                                        </li>
+
+                                        <li class="form-block__checkbox-item">
+                                            <label class="form-block__label">
+                                                <input class="form-block__checkbox" type="checkbox" name="createAcc">
+                                                <span class="form-block__choice">Create an account?</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="checkout__right">
+                <div class="cart-summary">
+                    <h3 class="cart-summary__title">Summary</h3>
+
+                    <form class="cart-summary__form form" id="order-details">
+                        <label class="form__label cart-summary__label">
+                            <input class="form__input form__input--grey" type="text" placeholder="000000">
+                            <span class="form__box form__box--grey">Promo code or Coupon</span>
+                        </label>
+
+                        <ul class="cart-summary__items">
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name cart-summary__name--bold">Subtotal</span>
+
+                                <span class="cart-summary__price cart-summary__price--bold">$0.00</span>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Shipping</span>
+
+                                <span class="cart-summary__price">$0.00</span>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Tax</span>
+
+                                <span class="cart-summary__price">$0.00</span>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--255">
+                                <span class="cart-summary__name">Discount</span>
+                            </li>
+
+                            <li class="cart-summary__item">
+                                <label class="cart-summary__group">
+                                    <input class="cart-summary__checkbox" type="checkbox">
+                                    <span class="cart-summary__choice">Lost, damaged or stolen package insurance <b>($2.50)</b></span>
+                                </label>
+                            </li>
+
+                            <li class="cart-summary__item cart-summary__item--280">
+                                <span class="cart-summary__name">Total</span>
+
+                                <span class="cart-summary__price cart-summary__price--accent">$0.00</span>
+                            </li>
+                        </ul>
+
+
+                        <button class="cart-summary__submit green-effect green-btn" type="submit">Place Order</button>
+                        <span class="cart-summary__text">
+                            Only $50.00 per month with
+                            <img src="images/icons/product-pin.png" alt="Viable company icon">
+                        </span>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

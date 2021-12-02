@@ -10,6 +10,20 @@
   background-color: #fff;
   border: 10px solid $blue-bg;
 
+  @include media-w($md) {
+    padding: 30px 45px 0;
+    max-width: 90%;
+  }
+
+  @include media-w($sm) {
+    border: none;
+    top: unset;
+    left: unset;
+    transform: unset;
+    max-width: 100%;
+    padding: 0 0 50px 0;
+  }
+
   &--show {
     opacity: 1;
     pointer-events: all;
@@ -24,14 +38,29 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+
+    @include media-w($sm) {
+      padding: 0 25px;
+      flex-direction: column;
+    }
   }
 
   &__left {
     display: flex;
+    @include media-w($sm) {
+      align-items: center;
+      margin-bottom: 40px;
+    }
   }
 
   &__right {
     display: flex;
+  }
+
+  &__img-wrapper {
+    @include media-w($sm) {
+      margin-right: 15px;
+    }
   }
 
   &__img {
@@ -51,6 +80,12 @@
     border: none;
     padding: 0;
 
+    @include media-w($sm) {
+      top: 23px;
+      right: unset;
+      left: 15px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -59,6 +94,11 @@
       width: 28px;
       height: 28px;
       background-image: url('../images/icons/cross-dark.svg');
+      background-repeat: no-repeat;
+
+      @include media-w($sm) {
+        background-image: url('../images/icons/arrow-back.svg');
+      }
     }
   }
 
@@ -70,10 +110,22 @@
     color: $black-main;
     text-align: center;
     margin: 0 0 25px 0;
+
+    @include media-w($sm) {
+      background-color: $blue-bg;
+      padding: 15px 15px 15px 70px;
+      margin-bottom: 15px;
+      font-size: 27px;
+      text-align: left;
+    }
   }
 
   &__form {
     position: relative;
+
+    @include media-w($sm) {
+      padding: 0 25px;
+    }
   }
 
   &__name {
@@ -85,22 +137,63 @@
   }
 
   &__before {
+    display: inline-block;
     padding-top: 10px;
     font-family: 'FjallaOne', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     color: #000000;
+
+    @include media-w($sm) {
+      margin-right: 10px;
+    }
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @include media-w($sm) {
+      flex-direction: column;
+
+    }
   }
 
   &__submit {
     position: absolute;
     right: 0;
     bottom: -100px;
+
+    @include media-w($sm) {
+      position: static;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .form__label {
+    @include media-w($sm) {
+      max-width: 100%;
+    }
+
+    &--last {
+      @include media-w($sm) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &:not(:last-child) {
+      @include media-w($sm) {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .form__notification {
+    @include media-w($sm) {
+      margin-bottom: 15px;
+    }
   }
 }

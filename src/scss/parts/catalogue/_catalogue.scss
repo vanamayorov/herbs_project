@@ -51,8 +51,7 @@
     border: 1px solid $grey60;
     margin-right: 70px;
 
-    @include media-w($md) {
-      max-width: 180px;
+    @include media-w($xl) {
       margin-right: 40px;
     }
 
@@ -67,20 +66,35 @@
     width: 100%;
     margin: 0 -18px;
 
+    @include media-w($xl) {
+      margin: 0 -7px;
+    }
+
     @include media-w($md) {
       margin: 0 -5px;
-      justify-content: center;
     }
   }
 
   &__item {
     padding: 0 18px;
     flex: 0 1 25%;
+    max-width: 25%;
     margin-bottom: 30px;
+
+    @include media-w($xl) {
+      padding: 0 7px;
+    }
 
     @include media-w($md) {
       padding: 0 5px;
       margin-bottom: 15px;
+      flex: 0 1 33.333%;
+      max-width: 33.333%;
+    }
+
+    @include media-w($sm) {
+      flex: 0 1 50%;
+      max-width: 50%;
     }
   }
 
@@ -88,6 +102,12 @@
     display: flex;
     width: 100%;
     height: 100%;
+
+    .product-card--sm {
+      @include media-w($xl) {
+        min-height: auto;
+      }
+    }
 
     &:focus {
       .product-card {
@@ -132,7 +152,7 @@
 
   &__row-dropdown {
     width: 100%;
-    top: 30px;
+    top: 33px;
     color: $black-main;
 
     &--products {
@@ -161,6 +181,10 @@
     background-color: transparent;
     padding: 12px 0;
     width: 50%;
+
+    @include media-w($md) {
+      font-size: 15px;
+    }
 
     .catalogue__sort {
       font-family: 'Poppins', sans-serif;

@@ -13,14 +13,43 @@
   &__inner {
     background-repeat: no-repeat;
     background-position: top center;
-    padding-top: 130px;
-    min-height: 883px;
+    padding-top: 60px;
+    background-size: cover;
+    min-height: calc(100vh - 130px);
+
+    @include media-w($xl) {
+      min-height: calc(100vh - 78px);
+    }
 
     @include media-w($md) {
       background-position: top center;
-      background-size: cover;
       padding-top: 45px;
-      min-height: 500px;
+    }
+
+    @include media-w($sm) {
+      background-position: left 75px;
+      position: relative;
+      padding-top: 0;
+    }
+
+    @include media-w($xs) {
+      background-position: left center;
+    }
+
+    .container {
+      @include media-w($sm) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        padding-top: 20px;
+        background-color: $blue-bg;
+      }
+
+      @include media-w($xs) {
+        background-color: transparent;
+      }
     }
 
   }
@@ -38,17 +67,18 @@
 
     @include text-clamp(4);
 
-    @include media-w($md) {
+    @include media-w($xl) {
+      font-size: 40px;
+      max-width: 525px;
       margin: 0 auto 5px;
-      font-size: 33px;
-      max-width: 525px
     }
 
     @include media-w($sm) {
+      margin: 0 auto 0 0;
       text-align: left;
-
       font-size: 34px;
-      max-width: 465px
+      max-width: 465px;
+      font-weight: 400;
     }
   }
 
@@ -63,7 +93,7 @@
   }
 
   .slick-dots {
-    bottom: 160px;
+    bottom: 100px;
 
     @include media-w($sm) {
       bottom: 0;

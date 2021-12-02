@@ -61,6 +61,10 @@
     p {
       &:not(:last-child) {
         margin-bottom: 30px;
+
+        @include media-w($md) {
+          margin-bottom: 15px;
+        }
       }
     }
   }

@@ -157,7 +157,6 @@ gulp.task("spriteSvg", spriteSvg);
 gulp.task(
   "build",
   gulp.series(
-    // 'cleanBuild',   опціонально
     gulp.parallel(
       "devCSS",
       "pluginsCSS",

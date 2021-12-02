@@ -18,14 +18,17 @@
   }
 
   &__delete {
+    display: block;
     background-color: transparent;
     border: 1px solid $grey63;
     border-radius: 50%;
     position: relative;
-    min-width: 28px;
-    min-height: 28px;
+    max-width: 28px;
+    height: 28px;
+    width: 100%;
     margin-right: 10px;
     transition: background-color 0.3s;
+    cursor: pointer;
 
     @include media-w($xl) {
       margin-right: 0;
@@ -42,27 +45,17 @@
 
     &::before {
       position: absolute;
-      content: "<";
+      content: "X";
       color: $grey63;
       top: 50%;
-      left: 11px;
-      transform: translateY(-50%);
-      transition: color 0.3s;
-    }
-
-    &::after {
-      position: absolute;
-      content: ">";
-      color: $grey63;
-      top: 50%;
-      right: 11px;
+      left: 8px;
       transform: translateY(-50%);
       transition: color 0.3s;
     }
 
     &:hover {
       background-color: $grey63;
-      &::after,
+
       &::before {
         color: #fff;
       }

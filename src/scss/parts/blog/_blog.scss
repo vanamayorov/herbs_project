@@ -78,9 +78,14 @@
     width: 240px;
     border: 1px solid $grey60;
     margin-right: 30px;
+    flex: none;
 
     @include media-w($lg) {
       margin-right: 10px;
+    }
+
+    @include media-w($md) {
+      width: 210px;
     }
 
     @include media-w($sm) {

@@ -1,0 +1,21 @@
+.checkout-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $grey60;
+
+  &__content {
+    width: 100%;
+    max-width: 220px;
+    min-width: 180px;
+    word-break: break-word;
+  }
+
+  @include media-w($md) {
+    display: none;
+  }
+}

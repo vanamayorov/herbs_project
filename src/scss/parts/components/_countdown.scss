@@ -70,13 +70,18 @@
 .time-elem {
   position: relative;
   color: #000;
-  height: 145px;
-  width: 145px;
+  height: 120px;
+  width: 120px;
   background-color: #f2f8f1;
   text-align: center;
   font-size: 54px;
   z-index: 2;
   overflow: hidden;
+
+  @include media-w($md) {
+    height: 100px;
+    font-size: 42px;
+  }
 
   @include media-w($sm) {
     width: 85px;
@@ -100,9 +105,13 @@
 
 .top {
   z-index: 3;
-  top: 30px;
+  top: 20px;
   transform-origin: 50% 100%;
   transform: perspective(200px);
+
+  @include media-w($sm) {
+    top: 25px;
+  }
 
   &--sm {
     top: 20px;
@@ -134,11 +143,15 @@
 
   span {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
+
+    @include media-w($sm) {
+      top: 25px;
+    }
   }
 
   &--sm {
@@ -163,13 +176,17 @@
 
   span {
     position: absolute;
-    top: -42px;
+    top: -40px;
     left: 0;
     right: 0;
     margin: auto;
 
+    @include media-w($md) {
+      top: -30px;
+    }
+
     @include media-w($sm) {
-      top: -20px;
+      top: -25px;
     }
   }
 

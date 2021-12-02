@@ -1,12 +1,8 @@
-<section class="cart">
-    <div class="cart__top">
-        <a class="cart__back" href="#">
-            <svg>
-                <use xlink:href="images/sprite.svg#arrow-down"></use>
-            </svg>
-        </a>
-        <span class="cart__text">Your cart</span>
-    </div>
+  <section class="cart">
+    @@include('../components/_return-back-mob.html', {
+      "addClass": "",
+      "text": "Your cart"
+      })
     <div class="container container--big">
         <div class="cart__inner">
 

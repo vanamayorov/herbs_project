@@ -1,0 +1,37 @@
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include media-w($xs) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__text {
+    max-width: 230px;
+  }
+
+  &__img-wrapper {
+    margin-bottom: 30px;
+
+    @include media-w($xs) {
+      max-width: 40%;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include media-w($xs) {
+      text-align: left;
+    }
+    padding-top: 25px;
+
+  }
+}

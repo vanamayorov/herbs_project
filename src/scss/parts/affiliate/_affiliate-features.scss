@@ -1,0 +1,40 @@
+.affiliate-features {
+  @include media-w($sm) {
+    margin-bottom: 50px;
+  }
+  &__title {
+    font-weight: 400;
+    margin: 0 0 80px;
+    text-align: center;
+
+    @include media-w($sm) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  &__item {
+    flex: 0 1 calc(33.333% - 66px);
+    margin-bottom: 30px;
+
+    @include media-w($md) {
+      flex: 0 1 33.333%;
+    }
+
+    @include media-w($sm) {
+      flex: 0 1 calc(50% - 20px);
+      margin: 0 10px 30px;
+    }
+
+    @include media-w($xs) {
+      flex: 0 1 100%;
+      margin: 0 0 15px;
+    }
+  }
+}

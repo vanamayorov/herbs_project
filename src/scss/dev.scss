@@ -262,3 +262,14 @@ input, textarea {
     }
   }
 }
+
+input.error {
+  color: initial;
+}
+
+label.error {
+  position: absolute;
+  left: 0;
+  bottom: -23px;
+  font-size: 14px;
+}

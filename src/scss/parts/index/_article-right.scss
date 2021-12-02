@@ -1,10 +1,14 @@
 .article-right {
   position: relative;
-  padding: 115px 0 0;
-  margin-bottom: 260px;
+  padding: 30px 0 0;
+  margin-bottom: 160px;
+
+  @include media-w($lg) {
+    margin-bottom: 100px;
+  }
 
   @include media-w($md) {
-    padding: 0 0 140px;
+    padding: 0 0 60px;
     margin-bottom: 0;
   }
 
@@ -23,13 +27,12 @@
     width: 1050px;
     height: 720px;
 
-    @include media-w($md) {
-      width: 100%;
-      height: 600px;
+    @include media-w($lg) {
+      height: 400px;
     }
 
-    @include media-w($sm) {
-      height: 400px;
+    @include media-w($md) {
+      width: 100%;
     }
   }
 
@@ -41,14 +44,17 @@
 
     @include media-w($md) {
       margin-top: 40px;
-      max-width: 800px;
+      max-width: 100%;
       margin-right: 0;
     }
   }
 
   &__inner {
     display: flex;
+    justify-content: center;
+    max-width: 1520px;
     flex-direction: row-reverse;
+    margin: 0 auto;
 
     @include media-w($md) {
       flex-direction: column;

@@ -1,0 +1,40 @@
+.return-back-mob {
+  padding: 14px 25px;
+  background-color: $blue-bg;
+  display: none;
+  align-items: center;
+  margin-bottom: 40px;
+
+
+  @include media-w($md) {
+    display: flex;
+  }
+
+  &--768 {
+    @include media-w($md) {
+      display: none;
+    }
+
+    @include media-w($sm) {
+      display: flex;
+    }
+  }
+
+  &__back {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      transform: rotate(90deg);
+      vertical-align: middle;
+    }
+  }
+
+
+  &__text {
+    font-weight: 500;
+  }
+}

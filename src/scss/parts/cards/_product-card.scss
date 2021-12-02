@@ -4,26 +4,25 @@
   justify-content: flex-start;
   align-items: center;
   border: 1px solid $grey60;
-  min-height: 476px;
   box-shadow: 0 0;
   position: relative;
+  height: 100%;
+  width: 100%;
   transform: scale(1);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 
   @include media-w($sm) {
-    min-height: 380px;
     justify-content: flex-end;
-
   }
 
   @include media-w($xs) {
-    min-height: 330px;
+    min-height: 270px;
   }
 
   &--sm {
     min-height: 360px;
 
-    @include media-w($sm){
+    @include media-w($sm) {
       min-height: 34vh;
     }
   }
@@ -32,8 +31,12 @@
   &__image {
     object-fit: contain;
     object-position: center;
-    width: 330px;
-    max-height: 330px;
+    width: 100%;
+    max-height: 275px;
+
+    @include media-w($lg) {
+      max-height: 220px;
+    }
 
     @include media-w($sm) {
       max-width: 100%;
@@ -56,16 +59,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14px;
+    padding: 20px 15px;
     width: 100%;
     height: 100%;
     background-color: transparent;
     border-top: 1px solid $grey60;
     transition: background-color 0.3s;
 
-    @include media-w($md) {
-      height: unset;
-    }
+    //@include media-w($md) {
+    //  height: unset;
+    //}
 
     @include media-w($sm) {
       text-align: center;
@@ -73,11 +76,15 @@
     }
 
     @include media-w($xs) {
-      padding: 20px 8px 28px;
+      padding: 10px 8px;
     }
 
     &--sm {
       padding: 10px;
+
+      @include media-w($lg) {
+        padding: 10px 5px;
+      }
     }
   }
 
@@ -85,6 +92,10 @@
     font-size: 20px;
     margin: 0 0 7px 0;
     font-weight: 600;
+    max-height: 60px;
+    text-align: center;
+
+    @include text-clamp(2);
 
     @include media-w($sm) {
       font-size: 18px;
@@ -92,6 +103,7 @@
 
     &--sm {
       margin: 0;
+      font-size: 18px;
     }
   }
 
@@ -105,12 +117,17 @@
 
   &__badge {
     position: absolute;
-    left: -15px;
+    left: 0;
+    bottom: 25%;
     display: flex;
-    height: 360px;
     flex-direction: column;
     justify-content: flex-end;
     z-index: 4;
+
+    @include media-w($lg) {
+      max-width: 70px;
+      bottom: 29%;
+    }
 
     @include media-w($md) {
       display: none;
@@ -123,6 +140,7 @@
         display: flex;
         flex-direction: column;
         top: -10px;
+        bottom: unset;
         height: unset;
       }
 
@@ -139,6 +157,13 @@
   }
 
   &__price {
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+    margin-top: auto;
+
     @include media-w($sm) {
       font-size: 16px;
     }

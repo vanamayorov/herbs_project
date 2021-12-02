@@ -43,7 +43,12 @@
     font-weight: 600;
     margin-bottom: 20px;
 
-    @include media-w($xs) {
+    @include media-w($md) {
+      max-width: 50%;
+    }
+
+    @include media-w($sm) {
+      max-width: 100%;
       margin-bottom: 15px;
     }
   }

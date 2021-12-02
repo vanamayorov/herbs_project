@@ -58,7 +58,6 @@
 
     @include media-w($md) {
       background-color: transparent;
-      margin-bottom: 0;
       text-align: left;
       margin-bottom: 20px;
     }
@@ -76,6 +75,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include media-w($md) {
+      margin-bottom: 25px;
+    }
   }
 
   &__img-wrapper {
@@ -95,30 +98,6 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 25px;
-  }
-
-  &__top {
-    padding: 14px 25px;
-    background-color: $blue-bg;
-    display: none;
-    align-items: center;
-
-    @include media-w($md) {
-      display: flex;
-    }
-  }
-
-  &__back {
-    background-color: transparent;
-    border: none;
-    margin-right: 10px;
-
-    svg {
-      width: 15px;
-      height: 15px;
-      transform: rotate(90deg);
-      vertical-align: middle;
-    }
   }
 
   &__products {

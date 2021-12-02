@@ -1,0 +1,65 @@
+.banner {
+  height: 592px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $black-main;
+
+  @include media-w($sm) {
+    height: 45vh;
+    background-color: $blue-bg;
+    margin-bottom: 35px;
+  }
+
+  @include media-w($xs) {
+    height: 30vh;
+  }
+
+  &__inner {
+    padding: 82px 0 220px;
+
+    @include media-w($sm) {
+      padding: 25px 35px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 490px;
+    text-align: center;
+
+    @include media-w($sm) {
+      max-width: 400px;
+    }
+
+    @include media-w($xs) {
+      max-width: 250px;
+    }
+  }
+
+  &__title {
+    font-family: 'FjallaOne', sans-serif;
+    font-size: 54px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    margin-bottom: 45px;
+    color: #373737;
+
+    @include media-w($sm) {
+      font-size: 44px;
+    }
+
+    @include media-w($xs) {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    min-width: 300px;
+  }
+}

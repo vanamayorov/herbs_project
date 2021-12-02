@@ -1,0 +1,45 @@
+.affiliate-results {
+  margin-bottom: 110px;
+
+  @include media-w($sm) {
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+
+  &__top {
+    margin-bottom: 65px;
+
+    @include media-w($sm) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 60px;
+
+    @include media-w($sm) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    border: 1px solid $grey60;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @include media-w($sm) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

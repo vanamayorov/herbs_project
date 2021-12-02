@@ -12,6 +12,11 @@
       min-height: 350px;
     }
 
+    @include media-w($xs) {
+      width: 310px;
+      min-height: 350px;
+    }
+
     .slick-dots {
       bottom: -13px;
       li{

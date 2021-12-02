@@ -1,0 +1,21 @@
+.affiliate-rules {
+  margin-bottom: 180px;
+
+  @include media-w($sm) {
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    font-weight: 400;
+    margin: 0 0 20px;
+  }
+
+  &__list {
+    padding-left: 25px;
+    margin: 0;
+  }
+
+  &__item {
+    list-style: initial;
+  }
+}

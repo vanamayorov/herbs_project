@@ -15,6 +15,9 @@
 //EFFECTS
 @import "./parts/effects/effects";
 
+// COMPONENTS
+@import "./parts/components/return-back-mob";
+
 //INDEX
 @import "./parts/buttons/buttons";
 @import "./parts/components/countdown";
@@ -82,195 +85,22 @@
 //MODAL-CART
 @import "./parts/modals/modal-cart/modal-cart";
 
-.banner {
-  height: 592px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: $black-main;
+// AFFILIATE
+@import "./parts/affiliate/banner";
+@import "./parts/affiliate/affiliate-text";
+@import "./parts/affiliate/join-row";
+@import "./parts/affiliate/affiliate-results";
+@import "./parts/affiliate/affiliate-card";
+@import "./parts/affiliate/affiliate-features";
+@import "./parts/affiliate/affiliate-rules";
+@import "./parts/cards/benefit-card";
 
-  &__inner {
-  padding: 82px 0 220px;
-  }
+// SUCCESS
+@import "./parts/success/success";
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 460px;
-    text-align: center;
-  }
-
-  &__title {
-    font-size: 54px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    margin-bottom: 45px;
-  }
-
-  &__btn {
-    min-width: 300px;
-  }
-}
-
-.affiliate-text {
-  color: $black-main;
-  margin-bottom: 60px;
-
-  p {
-    a {
-      text-decoration-line: underline;
-      color: $green60;
-      transition: color 0.3s;
-
-      &:hover {
-        color: $green-primary;
-      }
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-}
-
-.join-row {
-  max-width: 1530px;
-  margin: 0 auto 100px;
-  color: $black-main;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 465px;
-
-  &__bg {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
-
-
-  &__content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    min-height: 390px;
-    width: 100%;
-    max-width: 1320px;
-    margin-left: auto;
-    z-index: 2;
-  }
-
-  &__bg-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: auto;
-    background-color: $blue-bg;
-    max-width: 1320px;
-    width: 100%;
-    max-height: 390px;
-  }
-
-  &__title {
-    font-weight: 400;
-    display: inline-block;
-    margin-bottom: 30px;
-  }
-}
-
-.affiliate-results {
-  margin-bottom: 210px;
-
-  &__title {
-    font-weight: 400;
-    margin: 0 0 20px;
-  }
-
-  &__top {
-    margin-bottom: 65px;
-  }
-
-  &__items {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
-  }
-
-  &__item {
-    flex: 1;
-    border: 1px solid $grey60;
-
-    &:not(:last-child) {
-      margin-right: 35px;
-    }
-  }
-}
-
-.affiliate-card {
-  display: flex;
-  height: 100%;
-
-  &__left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 75px;
-    width: 100%;
-    background-color: $orange70;
-    padding: 0 15px;
-  }
-
-  &__num {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  &__text {
-    font-weight: 300;
-    font-size: 12px;
-  }
-
-  &__content {
-    margin: auto;
-    width: 100%;
-    padding: 22px 5px 22px 16px;
-  }
-}
-
-.affiliate-features {
-  &__title {
-    font-weight: 400;
-    margin: 0 0 80px;
-    text-align: center;
-  }
-
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0;
-  }
-
-  &__item {
-    flex: 0 1 calc(33.333% - 66px);
-  }
-}
-
-
+// CHECKOUT
+@import "./parts/checkout/checkout";
+@import "./parts/checkout/products-overview";
+@import "./parts/checkout/validated-block";
+@import "./parts/checkout/form-block";
+@import "./parts/cards/checkout-card";

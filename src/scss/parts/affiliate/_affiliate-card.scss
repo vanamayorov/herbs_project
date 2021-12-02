@@ -1,0 +1,47 @@
+.affiliate-card {
+  display: flex;
+  height: 100%;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 75px;
+    width: 100%;
+    background-color: $orange70;
+    padding: 0 15px;
+  }
+
+  &__num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  &__content {
+    margin: auto;
+    width: 100%;
+    padding: 22px 5px 22px 16px;
+
+    @include media-w($sm) {
+      padding: 10px 5px 10px 10px;
+    }
+
+    p {
+      &:not(:last-child) {
+        @include media-w($sm) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

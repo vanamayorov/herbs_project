@@ -1,0 +1,20 @@
+.affiliate-text {
+  color: $black-main;
+  margin-bottom: 60px;
+
+  p {
+    a {
+      text-decoration-line: underline;
+      color: $green60;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $green-primary;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}

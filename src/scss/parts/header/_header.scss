@@ -8,10 +8,6 @@
     margin-bottom: 79px;
   }
 
-  @include media-w($md) {
-    margin-bottom: 90px;
-  }
-
   &__box {
     margin-right: 117px;
 
@@ -91,7 +87,6 @@
     @include media-w($lg) {
       flex-direction: column;
       align-items: unset;
-      padding-bottom: 100px;
     }
   }
 
@@ -193,6 +188,7 @@
     background-color: #fff;
     border-bottom: 1px solid transparent;
     z-index: 3;
+    overflow-y: auto;
     transition: padding 0.3s, border-bottom 0.3s;
 
     &--sticky {
@@ -223,7 +219,7 @@
       width: 80vw;
       height: 100vh;
       color: black;
-      overflow: scroll;
+      overflow-y: scroll;
       background-color: #fff;
 
       .container {
@@ -361,6 +357,7 @@
 
     @include media-w($lg) {
       display: block;
+      padding-bottom: 120px;
     }
   }
 

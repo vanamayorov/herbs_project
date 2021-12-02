@@ -1,0 +1,104 @@
+.products-overview {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    @include media-w($md) {
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+
+    @include media-w($md) {
+      display: block;
+      font-size: 30px;
+      letter-spacing: 0.03em;
+      font-family: 'FjallaOne', sans-serif;
+      padding: 11px 28px;
+      color: #fff;
+      width: 100%;
+      margin-bottom: 15px;
+      background-color: $black-main;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25%);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include media-w($md) {
+      font-size: 14px;
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    overflow-x: auto;
+    padding-bottom: 25px;
+
+    @include media-w($md) {
+      flex-direction: column;
+      padding-top: 25px;
+    }
+  }
+
+  &__item {
+    min-width: 300px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include media-w($lg) {
+        margin-right: 15px;
+      }
+
+      @include media-w($md) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    @include media-w($md) {
+      width: 100%;
+    }
+
+    @include media-w($sm) {
+      width: 95%;
+    }
+
+    .item-card {
+      display: none;
+
+      @include media-w($md) {
+        display: flex;
+      }
+
+      .jq-number__field {
+        width: 100px;
+      }
+
+      .jq-number__spin.minus {
+        left: 5px;
+      }
+
+      .jq-number__spin.plus {
+        right: 5px;
+      }
+
+      .jq-number__field input {
+        @include media-w($sm) {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,10 @@
     padding: 10px 0;
   }
 
+  @include media-w($sm) {
+    padding: 0;
+  }
+
   &__inner {
     display: flex;
     align-items: flex-start;
@@ -73,6 +77,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+
+    @include media-w($xs) {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -119,10 +127,17 @@
 
     @include media-w($md) {
       width: 100%;
+      padding-right: 45px;
     }
 
     @include media-w($sm) {
       flex-direction: column;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    @include media-w($sm) {
+      font-size: 13px;
     }
 
     &::after {
@@ -133,21 +148,26 @@
       bottom: 0;
       width: 0;
       height: 100%;
-      border-top: 25px solid transparent;
-      border-right: 20px solid #fff;
-      border-bottom: 25px solid transparent;
+      border-top: 40px solid transparent;
+      border-right: 40px solid #fff;
+      border-bottom: 40px solid transparent;
+
+      @include media-w($md) {
+        border-top: 25px solid transparent;
+        border-right: 25px solid #fff;
+        border-bottom: 25px solid transparent;
+      }
 
       @include media-w($sm) {
-        border-top: 40px solid transparent;
-        border-right: 50px solid #fff;
-        border-bottom: 40px solid transparent;
+        border-top: 30px solid transparent;
+        border-right: 25px solid #fff;
+        border-bottom: 25px solid transparent;
       }
 
-      @include media-w(410px) {
-        border-top: 55px solid transparent;
-        border-right: 50px solid #fff;
-        border-bottom: 55px solid transparent;
+      @include media-w(340px) {
+        content: none;
       }
+
     }
   }
 
@@ -186,6 +206,10 @@
     cursor: pointer;
     margin-bottom: 28px;
 
+    @include media-w($xs) {
+      margin-bottom: 15px;
+    }
+
     &:hover {
       .product-details__radio-style {
         border-color: $green-primary;
@@ -200,7 +224,17 @@
 
   &__filter {
     @include media-w($md) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    @include media-w($xs) {
+      margin-bottom: 0;
+    }
+  }
+  
+  .slick-slider {
+    @include media-w($sm) {
+      margin-bottom: 10px;
     }
   }
 
@@ -453,9 +487,15 @@
     bottom: 0;
     opacity: 0;
     pointer-events: none;
+    overflow: auto;
     background-color: rgba(105,105,105, 0.5);
     z-index: 3;
     transition: opacity 0.4s;
+    
+    @include media-w($sm) {
+      top: 64px;
+      background-color: #fff;
+    }
 
     &--show {
       opacity: 1;
@@ -559,6 +599,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: none;
   width: 60px;
   height: 60px;
   border: 1px solid $blue-bg;

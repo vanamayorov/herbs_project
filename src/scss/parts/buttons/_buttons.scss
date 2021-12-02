@@ -135,3 +135,20 @@
     padding: 11px;
   }
 }
+
+.edit-link {
+  color: $green-primary;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $green70;
+  }
+
+  @include media-w($md) {
+    display: none;
+  }
+}
+

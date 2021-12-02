@@ -1,7 +1,8 @@
 .offers {
+  padding-bottom: 140px;
 
-  @include media-w($md) {
-    padding-bottom: 140px;
+  @include media-w($xl) {
+    padding-bottom: 40px;
   }
 
 
@@ -78,6 +79,7 @@
     transform: translateY(-50%);
     height: 350px;
     width: 730px;
+    margin: 0;
 
     @include media-w($lg) {
       width: 610px;

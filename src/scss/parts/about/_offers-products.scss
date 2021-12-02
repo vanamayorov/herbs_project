@@ -1,5 +1,5 @@
 .offers-products {
-  padding-bottom: 410px;
+  padding-bottom: 50px;
 
   &__title {
     max-width: 1260px;
@@ -7,14 +7,36 @@
     font-size: 54px;
     color: $black-main;
     letter-spacing: 0.05em;
-    margin: 0 auto 100px;
+    margin: 0 auto;
     font-weight: 400;
     text-transform: uppercase;
+
+    @include media-w($md) {
+      font-size: 30px;
+      letter-spacing: 0.03em;
+      margin-bottom: 20px;
+    }
+  }
+
+  .offers__inner {
+    @include media-w($md) {
+      margin-bottom: 60px;
+    }
+  }
+
+  .title {
+    @include media-w($md) {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin: 0;
   }
 
   &__item {
     &:not(:last-child) {
-      margin-bottom: 170px;
+      margin-bottom: 50px;
     }
   }
 }

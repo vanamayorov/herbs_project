@@ -1,6 +1,10 @@
 .about {
   position: relative;
-  padding: 200px 0 340px;
+  padding: 200px 0 50px;
+
+  @include media-w($md) {
+    padding: 110px 0 15px;
+  }
 
   &__bg {
     position: absolute;
@@ -14,7 +18,7 @@
     height: 345px;
 
     @include media-w($md) {
-      height: 200px;
+      height: 110px;
     }
   }
 
@@ -25,7 +29,7 @@
     padding: 60px 10px 0;
 
     @include media-w($md) {
-      padding-top: 40px;
+      padding-top: 20px;
     }
   }
 
@@ -42,12 +46,21 @@
     color: $black-main;
 
     @include media-w($md) {
-      font-size: 45px;
+      font-size: 32px;
+      margin: 0;
+    }
+
+    @include media-w($xs) {
+      font-size: 26px;
     }
   }
 
   &__row {
     margin-bottom: 90px;
+
+    @include media-w($md) {
+      margin-bottom: 40px;
+    }
 
     &--300 {
       margin-bottom: 340px;
@@ -55,10 +68,10 @@
   }
 
   &__results {
-    margin-bottom: 140px;
+    margin: 0 0 140px 0;
 
     @include media-w($md) {
-      margin-bottom: 90px;
+      margin-bottom: 30px;
     }
   }
 }

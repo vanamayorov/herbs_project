@@ -96,7 +96,7 @@ $(document).ready(function () {
 
     $(".burger").on("click", function () {
         $(".header__nav").addClass("header__nav--active");
-        $('body').addClass('lock');
+        $('body, .global-wrapper').addClass('lock');
     });
 
     $(".sort-group__btn").on("click", function () {
@@ -107,7 +107,7 @@ $(document).ready(function () {
         var div = $(".header__nav-inner");
         if (!div.is(e.target) && div.has(e.target).length === 0 && $(window).width() <= 1200) {
             $(".header__nav").removeClass("header__nav--active");
-            $('body').removeClass('lock');
+            $('body, .global-wrapper').removeClass('lock');
         }
 
         var container = $('.catalogue__dropdown');
@@ -168,7 +168,7 @@ $(document).ready(function () {
     var scrollBarWidth = parseInt(window.innerWidth) - parseInt(document.querySelector('.global-wrapper').clientWidth);
 
 
-    $('.tab-reviews__btn').on('click', function () {
+    $('.tab-reviews__btn, .tab-reviews__btn-mob').on('click', function () {
         var productModal = $('.product-details__modal-wrapper');
         productModal.addClass('product-details__modal-wrapper--show');
         $('body').addClass('lock');
@@ -176,7 +176,7 @@ $(document).ready(function () {
         $('.header__wrapper').css('padding-right', scrollBarWidth + 'px');
 
         productModal.on('click', function (e) {
-            if((!$('.product-details__modal').is(e.target) && $('.product-details__modal').has(e.target).length === 0) || $('.modal-product__close').is($(e.target))) {
+            if ((!$('.product-details__modal').is(e.target) && $('.product-details__modal').has(e.target).length === 0) || $('.modal-product__close').is($(e.target))) {
                 $('.product-details__modal-wrapper').removeClass('product-details__modal-wrapper--show');
                 $('body').removeClass('lock');
                 $('body').css('padding-right', 0);
@@ -200,17 +200,7 @@ $(document).ready(function () {
         $(`.tabs__wrapper[data-content=${contentId}]`).toggleClass('tabs__wrapper--show');
     });
 
-    $('body').on('click', '.tab-reviews__btn-mob', function () {
-        $('.review-form').addClass('review-form--show');
-        $('body').addClass('lock');
-    });
-
-    $('body').on('click', '.review-form__back', function () {
-        $('.review-form').removeClass('review-form--show');
-        $('body').removeClass('lock');
-    });
-
-    $('body').on('click', '.user-nav__link--cart', function() {
+    $('body').on('click', '.user-nav__link--cart', function () {
         var offset = $(window).scrollTop();
         $('body, html').animate({
             scrollTop: offset
@@ -223,14 +213,24 @@ $(document).ready(function () {
         $('.header__wrapper').css('padding-right', scrollBarWidth + 'px');
 
 
-        modalCart.on('click', function(e) {
-            if((!$('.modal-cart__inner').is(e.target) && $('.modal-cart__inner').has(e.target).length === 0) || $('.modal-cart__close').is($(e.target))) {
+        modalCart.on('click', function (e) {
+            if ((!$('.modal-cart__inner').is(e.target) && $('.modal-cart__inner').has(e.target).length === 0) || $('.modal-cart__close').is($(e.target))) {
                 modalCart.removeClass('modal-cart--active');
                 $('body').removeClass('lock');
                 $('body').css('padding-right', 0);
                 $('.header__wrapper').css('padding-right', 0);
             }
         });
+    });
+
+    $('.form-block__add-company').on('click', function () {
+        $(this).addClass('form-block__add-company--hide');
+        $(".form-block__additional").removeClass('form-block__additional--hide');
+    });
+
+    $('.form-block__close-company').on('click', function () {
+        $(".form-block__additional").addClass('form-block__additional--hide');
+        $('.form-block__add-company').removeClass('form-block__add-company--hide');
     });
 
     $('.review-form__form').validate({
@@ -284,23 +284,108 @@ $(document).ready(function () {
 
     });
 
+    $('#billing-details').validate({
+        rules: {
+            agree18: {
+                required: true
+            },
+            firstName: {
+                required: true
+            },
+            secondName: {
+                required: true
+            },
+            zip: {
+                required: true,
+                maxLength: 4
+            },
+            address: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+        },
+        messages: {
+            firstName: "Please specify your first name",
+            secondName: "Please specify your second name",
+            zip: "Enter your zip code",
+            address: "Enter your address",
+            email: {
+                required: "We need your email address",
+                email: "Your email address must be in the format of name@domain.com"
+            },
+        },
+        errorPlacement: function (error, element) {
+            element.parents('.form-block__label').append(error);
+        }
+    });
+
+    $('#payment-details').validate({
+        rules: {
+            cardNum: {
+                required: true,
+                maxLength: 16
+            },
+            expirationDate: {
+                required: true,
+                maxLength: 4
+            },
+            securityCode: {
+                required: true,
+                maxLength: 3
+            }
+        },
+        errorPlacement: function (error, element) {
+            element.parents('.form-block__label').append(error);
+        }
+    });
+
+    $.fn.setCursorPosition = function (pos) {
+        if ($(this).get(0).setSelectionRange) {
+            $(this).get(0).setSelectionRange(pos, pos);
+        } else if ($(this).get(0).createTextRange) {
+            var range = $(this).get(0).createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    };
+    $('[name="phone"]').click(function () {
+        $(this).setCursorPosition(1);
+    }).mask("(999) 999-9999");
+
+    $('[name="cardNum"]').mask("9999 9999 9999 9999");
+
+    $('[name="expirationDate"]').mask("99/99");
+
+    $('[name="securityCode"]').mask("999");
+
+    $('body').on('click', '.form-block__payment-item', function () {
+        $('.form-block__tab-content').removeClass("form-block__tab-content--active");
+        var index = $(this).data('tab');
+        $(`.form-block__tab-content[data-content=${index}]`).addClass('form-block__tab-content--active');
+    });
+
     function mapReplace() {
         var map = $('.contact__map');
 
-        if($(window).width() <= 992) {
+        if ($(window).width() <= 992) {
             map.insertAfter('.contact__left');
         } else {
             map.insertAfter('.contact__wrapper');
         }
     }
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         mapReplace();
     });
 
     mapReplace();
 
-    $('body').on('click', '.blog__switch--products', function() {
+    $('body').on('click', '.blog__switch--products', function () {
         $('.blog__switch--sort').removeClass('blog__switch--active');
         $(this).toggleClass('blog__switch--active');
         $('.blog__row-dropdown--sort').removeClass('dropdown-list--active');
@@ -361,96 +446,4 @@ $(document).ready(function () {
             }
         ]
     });
-
-    var minutes = $(".minutes");
-    var seconds = $(".seconds");
-
-    var timeLeft = {
-        d: 0,
-        h: 0,
-        m: 0,
-        s: 0,
-    }
-
-    var totalSeconds;
-
-    function init() {
-        totalSeconds = Math.floor((new Date('18.07.2021') - new Date()) / 1000);
-        totalSeconds = Math.floor((new Date(Date.parse(new Date()) + 1 / 48 * 24 * 60 * 60 * 1000) - new Date()) / 1000);
-        setTimeLeft();
-
-        var interval = setInterval(() => {
-            if (totalSeconds < 0) {
-                clearInterval(interval);
-            }
-
-            countTime();
-        }, 1000);
-
-    }
-
-    function countTime() {
-        if (totalSeconds > 0) {
-            --timeLeft.s;
-            if (timeLeft.m >= 0 && timeLeft.s < 0) {
-                timeLeft.s = 59;
-                --timeLeft.m;
-                if (timeLeft.h >= 0 && timeLeft.m < 0) {
-                    timeLeft.m = 59;
-                    --timeLeft.h;
-                    if (timeLeft.d >= 0 && timeLeft.h < 0) {
-                        timeLeft.h = 23;
-                        --timeLeft.d;
-                    }
-                }
-            }
-        }
-        --totalSeconds;
-        printTime();
-    }
-
-    function printTime() {
-
-        animateFlip(minutes, timeLeft.m);
-        animateFlip(seconds, timeLeft.s);
-    }
-
-    function animateFlip(element, value) {
-        const valueInDom = parseInt(element.find('.bottom-back').text());
-        const currentValue = value < 10 ? '0' + value : '' + value;
-
-        if (valueInDom === parseInt(currentValue)) {
-            return;
-        }
-
-        element.find('.top-back span').text(currentValue);
-        element.find('.bottom-back span').text(currentValue);
-
-        gsap.to(element.find('.top'), 0.7, {
-            rotationX: '-180deg',
-            transformPerspective: 300,
-            ease: Quart.easeOut,
-            onComplete: () => {
-                element.find('.top').text(currentValue);
-                element.find('.bottom').text(currentValue);
-                gsap.set(element.find('.top'), {rotationX: 0});
-            }
-        });
-
-        gsap.to(element.find('.top-back'), 0.7, {
-            rotationX: '0',
-            transformPerspective: 300,
-            ease: Quart.easeOut,
-            clearProps: 'all'
-        });
-    }
-
-    function setTimeLeft() {
-        timeLeft.d = Math.floor(totalSeconds / (60 * 60 * 24));
-        timeLeft.h = Math.floor(totalSeconds / (60 * 60) % 24);
-        timeLeft.m = Math.floor(totalSeconds / (60) % 60);
-        timeLeft.s = Math.floor(totalSeconds % 60);
-    }
-
-    // init();
 });
