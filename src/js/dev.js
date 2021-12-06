@@ -1,19 +1,19 @@
 $(document).ready(function () {
     var consultingForms = $('.consulting-form__form');
-    consultingForms.each( function () {
+    consultingForms.each(function () {
         $(this).validate({
             rules: {
                 firstName: {
                     required: true
-                },secondName: {
+                }, secondName: {
                     required: true
-                },tel: {
+                }, tel: {
                     required: true
-                },mail: {
+                }, mail: {
                     required: true
-                },company: {
+                }, company: {
                     required: true
-                },website: {
+                }, website: {
                     required: true
                 },
             },
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 company: "Please specify your company",
                 website: "Please specify your website",
             },
-            submitHandler: function() {
+            submitHandler: function () {
                 $('.success-modal').addClass('success-modal--active');
             }
         });
@@ -142,7 +142,7 @@ $(document).ready(function () {
         }
 
         var container = $('.catalogue__dropdown');
-        if ($('.sort-group__btn').is(e.target)) {
+        if (!$('.sort-group__btn').is(e.target)) {
             container.removeClass('dropdown-list--active');
         }
 
@@ -477,12 +477,9 @@ $(document).ready(function () {
             }
         ]
     });
-<<<<<<< HEAD
-=======
-
-    $('body').on('click', '.consulting-form__choose', function(){
+    $('body').on('click', '.consulting-form__choose', function () {
         $(this).toggleClass('consulting-form__choose--active');
-      $(this).parents('.consulting-form__dropdown').find('.dropdown-list').toggleClass('dropdown-list--active');
+        $(this).parents('.consulting-form__dropdown').find('.dropdown-list').toggleClass('dropdown-list--active');
     });
 
     $('body').on('click', '.wholesale__consulting-btn', function () {
@@ -490,7 +487,7 @@ $(document).ready(function () {
         $('body').addClass('lock');
     });
 
-    $('body').on('click', '.modal-wholesale__btn', function() {
+    $('body').on('click', '.modal-wholesale__btn', function () {
         $('.wholesale__modal-wrapper').removeClass('wholesale__modal-wrapper--active');
     });
 
@@ -587,6 +584,5 @@ $(document).ready(function () {
         timeLeft.s = Math.floor(totalSeconds % 60);
     }
 
-    // init();
->>>>>>> 01f217393dcb078f8d2cd12b4ad2c85759c9b0a9
+    init();
 });
